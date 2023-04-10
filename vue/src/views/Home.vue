@@ -2,6 +2,7 @@
   <div class="home">
     <h1>.NetCronomicon</h1>
     <p>A Tome revealing all information in the coding world.</p>
+    
     <example-card v-for="example in examples" :key="example.exampleId" :example="example"/>
 
   </div>

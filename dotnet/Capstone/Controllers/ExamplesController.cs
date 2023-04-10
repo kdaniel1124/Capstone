@@ -24,5 +24,14 @@ namespace Capstone.Controllers
 
             return Ok(allExamples);
         }
+
+        [HttpPost()]
+        public ActionResult AddExample(Example newExample)
+        {
+
+            examplesDAO.AddExample(newExample);
+
+            return Ok();
+        }
     }
 }

@@ -6,5 +6,7 @@ namespace Capstone.DAO
     public interface IExamplesDAO
     {
         List<Example> GetAllExamples();
+        void AddExample(Example newExample);
+
     }
 }

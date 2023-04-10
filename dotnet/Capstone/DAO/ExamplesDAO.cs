@@ -1,4 +1,5 @@
 ﻿using Capstone.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,8 +14,28 @@ namespace Capstone.DAO
         {
             connectionString = connString;
         }
-        public List<Example> GetAllExamples()
+
+        public void AddExample(Example newExample)
+        {
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                conn.Open();
+
+                string sql = "INSERT INTO examples (title, code_language, code) " +
+                    "VALUES(@title, @codeLanguage, @code);";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@title", newExample.Title);
+                cmd.Parameters.AddWithValue("@codeLanguage", newExample.CodeLanguage);
+                cmd.Parameters.AddWithValue("@code", newExample.Code);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public List<Example> GetAllExamples()
+        {
             List<Example> results = new List<Example>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -40,8 +61,8 @@ namespace Capstone.DAO
                 }
                 return results;
             }
-            }
+        }
 
-        
+
     }
 }

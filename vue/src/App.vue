@@ -8,21 +8,24 @@
         <i class="fas fa-home"></i> <!-- This is a font awesome icon -->
         Home 
       </router-link>
+      <router-link class="nav-item" :to="{name: 'newExample'}">
+        &nbsp; | &nbsp;Suggest New Example
+      </router-link>
       <router-link
         class="nav-item"
         v-bind:to="{ name: 'register' }"
-        v-if="!$store.state.token">&nbsp;|&nbsp;Register</router-link>
+        v-if="!$store.state.token">&nbsp; | &nbsp;Register</router-link>
       <router-link
         class="nav-item"
         v-bind:to="{ name: 'login' }"
         v-if="!$store.state.token">
-        &nbsp;|&nbsp;Login
+        &nbsp; | &nbsp;Login
       </router-link>
       <router-link
         class="nav-item"
         v-bind:to="{ name: 'logout' }"
         v-if="$store.state.token">
-        &nbsp;|&nbsp;Logout
+        &nbsp; | &nbsp;Logout
       </router-link>
     </div>
     
@@ -49,6 +52,10 @@ export default {
 html,
 body {
   background-color: $accentDark;
+  color: $light;
+}
+
+.nav-item {
   color: $light;
 }
 </style>
