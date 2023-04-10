@@ -46,5 +46,9 @@ export default {
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 // Your custom styles go below this point
-
+html,
+body {
+  background-color: $accentDark;
+  color: $light;
+}
 </style>
