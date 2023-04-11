@@ -37,7 +37,12 @@ INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','Jg4
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin');
 INSERT INTO examples (title, code_language, code ) VALUES('How to make a For Each Loop', 'C#', 'int[] numbers = {1, 2 ,3 ,4 ,5, 6} ; foreach (int item in numbers) { item = item + 1; }');
 INSERT INTO examples (title, code_language, code ) VALUES('How to make a List', 'C#', 'List<string> testList = new List<string>();');
+
+INSERT INTO examples (title, code_language, code ) VALUES('@title', '@codeLanguage', '@code');
+
+
 GO
+SELECT * FROM examples
 
 
 
