@@ -46,12 +46,13 @@ export default {
 @import "@/styles/colors.scss";
 
 .card {
-  border: 2px solid black;
-  border-radius: 10px;
-  width: 80%;
-  height: 80%;
+  border: 4px solid black;
+  border-radius: px;
   margin: 2%;
+  display: flex;
+  justify-content: center;
 }
+
 .card-header {
   display: flex;
   justify-content: space-between;

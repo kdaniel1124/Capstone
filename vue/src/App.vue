@@ -6,7 +6,7 @@
   <div id="app" class="container"> <!-- If you start to get random styling you don't like, remove container from this div -->
     <div id="nav">
       <router-link class="nav-item" v-bind:to="{ name: 'home' }">
-        <i class="fas fa-home"></i> <!-- This is a font awesome icon -->
+        <img src=TomeTest.png> <!-- This is a font awesome icon -->
         Home 
       </router-link>
       <router-link class="nav-item" :to="{name: 'newExample'}">
@@ -60,6 +60,9 @@ body {
 
 .nav-item {
   color: $light;
+}
+img {
+  height: 40px;
 }
 
 </style>

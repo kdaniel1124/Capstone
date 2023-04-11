@@ -31,3 +31,9 @@ data() {
 };
 
 </script>
+<style>
+h1, p {
+  display: flex;
+  justify-content: center;
+}
+</style>
