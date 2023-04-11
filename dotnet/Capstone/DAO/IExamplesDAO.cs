@@ -7,6 +7,7 @@ namespace Capstone.DAO
     {
         List<Example> GetAllExamples();
         void AddExample(Example newExample);
+        void UpdateExample(Example updatedExample);
 
     }
 }

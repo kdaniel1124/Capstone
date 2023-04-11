@@ -33,5 +33,13 @@ namespace Capstone.Controllers
 
             return Ok();
         }
+        [HttpPut()]
+        public ActionResult UpdateExample(Example updatedExample)
+        {
+
+            examplesDAO.UpdateExample(updatedExample);
+
+            return Ok();
+        }
     }
 }

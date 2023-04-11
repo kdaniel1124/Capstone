@@ -27,7 +27,6 @@ data() {
               .then(response => {
                 this.examples = response.data;
               })
-              .catch(error => console.error('Did not get examples :c', error));
 }
 };
 
