@@ -59,7 +59,7 @@
         type="submit"
         :disabled="!isFormValid"
         value="Submit"
-        @click.prevent="addNewExample()"
+        @click.prevent="updateExample()"
       />
     </div>
   </form>
@@ -88,16 +88,19 @@ export default {
     },
   },
   methods: {
-    addNewExample() {
+   updateExample() {
       //let newExample = {id: this.id, language: this.language, title: this.title, codeBody: this.codeBody}
 
-      ExamplesService.addExample(this.example)
+      ExamplesService.updateExample(this.example)
         .then(() => {
           this.$router.push({ name: "home" });
         })
         .catch((err) => console.error("Could not add example :c", err));
     },
   },
+  created() {
+    this.example = this.$store.state.currentExample
+  }
 };
 </script>
 

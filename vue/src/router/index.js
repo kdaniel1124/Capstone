@@ -6,6 +6,7 @@ import Logout from "../views/Logout.vue";
 import Register from "../views/Register.vue";
 import store from "../store/index";
 import NewExample from "../views/AddExample.vue";
+import UpdateExample from "../views/UpdateExample.vue";
 
 Vue.use(Router);
 
@@ -59,12 +60,20 @@ const router = new Router({
       name: "newExample",
       component: NewExample,
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
       },
     },
     {
       path: "*",
       redirect: "/",
+    },
+    {
+      path: "/update",
+      name: "updateExample",
+      component: UpdateExample,
+      meta: {
+        requiresAuth: true,
+      },
     },
   ],
 });

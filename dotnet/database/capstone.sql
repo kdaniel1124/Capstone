@@ -38,23 +38,19 @@ INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','Jg4
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin');
 INSERT INTO examples (title, code_language, code ) VALUES('How to make a For Each Loop', 'C#', 'int[] numbers = {1, 2 ,3 ,4 ,5, 6} ; foreach (int item in numbers) { item = item + 1; }');
 INSERT INTO examples (title, code_language, code ) VALUES('How to make a List', 'C#', 'List<string> testList = new List<string>();');
-INSERT INTO examples (title, code_language, code, attribution ) VALUES('How to make a List', 'C#', 'List<string> testList = new List<string>();', 'Da Boiz');
+INSERT INTO examples (title, code_language, code ) VALUES('How to make an Array', 'C#', 'int[] myNum = {10, 20, 30, 40};');
+INSERT INTO examples (title, code_language, code ) VALUES('How to make a For Loop', 'C#', 'for (int i = 1; i <= 100; i++) { if (i % 3 == 0 && i % 5 == 0)  {Console.WriteLine("FizzBuzz")');
 
 INSERT INTO examples (title, code_language, code ) VALUES('@title', '@codeLanguage', '@code');
 
-UPDATE examples 
-SET 
-	title = 'tittel'
 
-WHERE
-	example_id = 2
 
 SELECT * FROM examples
 
 
 
 GO
-SELECT * FROM examples
+
 
 
 

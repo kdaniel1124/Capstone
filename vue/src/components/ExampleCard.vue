@@ -1,6 +1,6 @@
 <template>
   <div class="card example">
-    <h2 class="card-header">{{ example.codeLanguage }}<button class="btn btn-primary" id="edit-button">Edit</button></h2>
+    <h2 class="card-header">{{ example.codeLanguage }}<button v-if="this.$store.state.user.role==='admin'" @click.prevent="editExample" class="btn btn-primary" id="edit-button">Edit</button></h2>
     
     <div class="card-body">
       <h2 class="card-title">{{ example.title }}</h2>
@@ -18,6 +18,12 @@ export default {
     return {
       testString: this.example.attribution,
     };
+  },
+  methods: {
+    editExample() {
+      this.$store.commit('SET_CURRENT_EXAMPLE', this.example);
+        this.$router.push({name: 'updateExample'});
+    }
   },
   computed: {
     isValidUrl() {
