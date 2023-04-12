@@ -2,6 +2,7 @@
   <div class="home">
     <h1></h1>
     <p>A Tome revealing all information in the coding world.</p>
+    
     <example-card v-for="example in examples" :key="example.exampleId" :example="example"/>
 
   </div>
@@ -26,8 +27,13 @@ data() {
               .then(response => {
                 this.examples = response.data;
               })
-              .catch(error => console.error('Did not get examples :c', error));
 }
 };
 
 </script>
+<style>
+h1, p {
+  display: flex;
+  justify-content: center;
+}
+</style>
