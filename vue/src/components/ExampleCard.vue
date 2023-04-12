@@ -37,13 +37,12 @@ export default {
     };
   },
   methods: {
-    editExample() {
-    
+    editExample() {  
       this.$store.commit("SET_CURRENT_EXAMPLE", this.example);
       this.$router.push({ name: "updateExample" });
     },
-    async copyCode() {
-      await navigator.clipboard.writeText(this.example.code);
+    copyCode() {
+      navigator.clipboard.writeText(this.example.code);
     },
   },
   computed: {
