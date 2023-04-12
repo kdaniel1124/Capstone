@@ -35,5 +35,13 @@ data() {
 h1, p {
   display: flex;
   justify-content: center;
+  font-family: 'Metal Mania', cursive;
+  text-shadow: 2px 2px 2px black;
+}
+h1 {
+    font-size: 50px;
+}
+p {
+    font-size: 35px;
 }
 </style>

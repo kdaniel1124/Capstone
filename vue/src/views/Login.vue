@@ -36,9 +36,9 @@
           required />
       </div>
       <div class="form-group">
-        <router-link :to="{ name: 'register' }">Need an account?</router-link>
+        <router-link id="registerLink" :to="{ name: 'register' }">Need an account?</router-link>
       </div>
-      <button class="btn btn-primary" type="submit">Sign in</button>
+      <button class="btn btn-primary, scrollButton" type="submit">Sign in</button>
     </form>
   </div>
 </template>
@@ -85,3 +85,29 @@ export default {
   },
 };
 </script>
+<style>
+button {
+  font-family: 'Metal Mania', cursive;
+}
+.form-group {
+  font-family: 'Metal Mania', cursive;
+}
+#registerLink {
+  color: #f7ebe8;
+}
+html,body  {
+  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/background.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+}
+ .form-signin{
+  border: 4px solid black;
+  border-radius: 10%;
+  padding: 25px;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10%;
+  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/stone.png");
+}
+
+</style>

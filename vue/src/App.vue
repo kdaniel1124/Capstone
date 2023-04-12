@@ -60,9 +60,22 @@ body {
 
 .nav-item {
   color: $light;
-}
+  font-family: 'Metal Mania', cursive;
+ text-shadow: 2px 2px 2px black;
+ text-decoration: none;
+ }
+ a:hover {
+   color:$highlight;
+   text-decoration: none;
+ }
 img {
   height: 40px;
 }
+.scrollButton {
+  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/button.png");
+  background-position: center;
+  background-size: 100%;
+}
+
 
 </style>

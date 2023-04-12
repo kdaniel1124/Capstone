@@ -1,5 +1,8 @@
 <template>
+<section>
+    <h2>Edit Example Form</h2>
   <update-example-form />
+</section>
 </template>
 
 <script>
@@ -13,5 +16,9 @@ export default {
 </script>
 
 <style>
-
+h2 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Metal Mania', cursive;
+}
 </style>

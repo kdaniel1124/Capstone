@@ -54,8 +54,9 @@
         />
       </div>
 
-      <input
-        class="btn btn-secondary"
+      <input 
+        id="submitButton"
+        class="btn btn-secondary, scrollButton"
         type="submit"
         :disabled="!isFormValid"
         value="Submit"
@@ -102,4 +103,14 @@ export default {
 </script>
 
 <style>
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+#submitButton {
+  width: 150px;
+  height: 40px;
+  margin: auto;
+}
 </style>
