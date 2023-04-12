@@ -34,9 +34,9 @@
           required />
       </div>
       <div class="form-group">
-        <router-link :to="{ name: 'login' }">Have an account?</router-link>
+        <router-link id="haveAccount" :to="{ name: 'login' }">Have an account?</router-link>
       </div>
-      <button class="btn btn-primary" type="submit">
+      <button class="btn btn-primary, scrollButton" type="submit">
         Create Account
       </button>
     </form>
@@ -93,4 +93,26 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#haveAccount {
+  color: #f7ebe8;
+}
+html,body  {
+  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/background.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+}
+ .form-register{
+  border: 4px solid black;
+  border-radius: 10%;
+  padding: 25px;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10%;
+  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/stone.png");
+}
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+</style>
