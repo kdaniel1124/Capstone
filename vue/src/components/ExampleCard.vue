@@ -1,10 +1,29 @@
 <template>
   <div class="card example">
-    <h2 class="card-header">{{ example.codeLanguage }} <h3>{{ example.title }}</h3><button v-if="this.$store.state.user.role==='admin'" @click.prevent="editExample" class="btn btn-primary, scrollButton" id="edit-button">Edit</button></h2>
+    <h2 class="card-header">
+      {{ example.codeLanguage }}
+      <h3>{{ example.title }}</h3>
+      <div>
+        <button class="scrollButton" @click.prevent="copyCode">
+          Copy Code
+        </button>
+        <button
+          v-if="this.$store.state.user.role === 'admin'"
+          @click.prevent="editExample"
+          class="btn btn-primary, scrollButton"
+          id="edit-button"
+        >
+          Edit
+        </button>
+      </div>
+    </h2>
     <div class="card-body">
       <pre><code class="language-csharp">{{example.code}}</code></pre>
-      <a v-if="isValidUrl" class="card-attribution" v-bind:href="testString">{{ example.attribution }}</a>
-      <p v-if="!isValidUrl">- {{example.attribution}}</p>
+      <a v-if="isValidUrl" class="card-attribution" v-bind:href="testString">{{
+        example.attributionUrl
+      }}</a>
+      <p v-if="!isValidUrl">- {{ example.attributionUrl }}</p>
+      <p v-if="example.attributionAuthor">{{ example.attributionAuthor }}</p>
     </div>
   </div>
 </template>
@@ -14,14 +33,18 @@ export default {
   props: ["example"],
   data() {
     return {
-      testString: this.example.attribution,
+      testString: this.example.attributionUrl,
     };
   },
   methods: {
     editExample() {
-      this.$store.commit('SET_CURRENT_EXAMPLE', this.example);
-        this.$router.push({name: 'updateExample'});
-    }
+    
+      this.$store.commit("SET_CURRENT_EXAMPLE", this.example);
+      this.$router.push({ name: "updateExample" });
+    },
+    async copyCode() {
+      await navigator.clipboard.writeText(this.example.code);
+    },
   },
   computed: {
     isValidUrl() {
@@ -44,21 +67,20 @@ export default {
 @import "@/styles/colors.scss";
 
 .card {
- border: 4px solid black;
+  border: 4px solid black;
   border-radius: 5%;
   padding: 15px;
   margin-top: 5%;
-  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/stone.png");
-  
+  background-image: url("../../public/stone2.jpg");
+  margin-bottom: 5%;
 }
-
 
 .card-header {
   display: flex;
   justify-content: space-between;
   color: $highlight;
   background-color: $accentLight;
-  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/stone.png");
+  background-image: url("../../public/stone2.jpg");
   text-shadow: 2px 2px 2px black;
 }
 .card-title {
@@ -69,5 +91,4 @@ export default {
   color: $dark;
   border: 4px solid black;
 }
-
 </style>

@@ -43,14 +43,26 @@
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label"
-          >Source</label
+          >Author</label
         >
         <input
           type="text"
           class="form-control"
           id="exampleFormControlInput2"
           placeholder="(Optional)"
-          v-model="example.attribution"
+          v-model="example.attributionAuthor"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >URL</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput2"
+          placeholder="(Optional)"
+          v-model="example.attributionUrl"
         />
       </div>
 
@@ -77,7 +89,8 @@ export default {
         codeLanguage: "",
         title: "",
         code: "",
-        attribution: "",
+        attributionAuthor: "",
+        attributionUrl: "",
       },
     };
   },

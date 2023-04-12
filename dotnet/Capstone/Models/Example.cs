@@ -12,7 +12,8 @@ namespace Capstone.Models
 
         public int ExampleId { get; set; }
 
-        public string Attribution { get; set; } 
+        public string AttributionAuthor { get; set; } 
+        public string AttributionUrl { get; set; } 
 
     }
 }

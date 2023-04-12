@@ -22,15 +22,16 @@ namespace Capstone.DAO
             {
                 conn.Open();
 
-                string sql = "INSERT INTO examples (title, code_language, code, attribution) " +
-                    "VALUES(@title, @codeLanguage, @code, @attribution);";
+                string sql = "INSERT INTO examples (title, code_language, code, attribution_author, attribution_url) " +
+                    "VALUES(@title, @codeLanguage, @code, @attributionAuthor, @attributionUrl);";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@title", newExample.Title);
                 cmd.Parameters.AddWithValue("@codeLanguage", newExample.CodeLanguage);
                 cmd.Parameters.AddWithValue("@code", newExample.Code);
-                cmd.Parameters.AddWithValue("@attribution", newExample.Attribution);
+                cmd.Parameters.AddWithValue("@attributionAuthor", newExample.AttributionAuthor);
+                cmd.Parameters.AddWithValue("@attributionUrl", newExample.AttributionUrl);
 
                 cmd.ExecuteNonQuery();
             }
@@ -47,7 +48,8 @@ namespace Capstone.DAO
                     "SET title = @title, " +
                     "code_language = @codeLanguage, " +
                     "code = @codeBody, " +
-                    "attribution = @attribution " +
+                    "attribution_author = @attributionAuthor, " +
+                    "attribution_url = @attributionUrl " +
                     "WHERE example_id = @exampleId";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -55,7 +57,8 @@ namespace Capstone.DAO
                 cmd.Parameters.AddWithValue("@title", updatedExample.Title);
                 cmd.Parameters.AddWithValue("@codeLanguage", updatedExample.CodeLanguage);
                 cmd.Parameters.AddWithValue("@codeBody", updatedExample.Code);
-                cmd.Parameters.AddWithValue("@attribution", updatedExample.Attribution);
+                cmd.Parameters.AddWithValue("@attributionAuthor", updatedExample.AttributionAuthor);
+                cmd.Parameters.AddWithValue("@attributionUrl", updatedExample.AttributionUrl);
                 cmd.Parameters.AddWithValue("@exampleId", updatedExample.ExampleId);
 
                 cmd.ExecuteNonQuery();
@@ -82,7 +85,8 @@ namespace Capstone.DAO
                     example.CodeLanguage = Convert.ToString(reader["code_language"]);
                     example.Code = Convert.ToString(reader["code"]);
                     example.ExampleId = Convert.ToInt32(reader["example_id"]);
-                    example.Attribution = Convert.ToString(reader["attribution"]);
+                    example.AttributionAuthor = Convert.ToString(reader["attribution_author"]);
+                    example.AttributionUrl = Convert.ToString(reader["attribution_url"]);
 
                     results.Add(example);
 

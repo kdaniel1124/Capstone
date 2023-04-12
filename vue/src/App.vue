@@ -72,9 +72,12 @@ img {
   height: 40px;
 }
 .scrollButton {
-  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/button.png");
+  background-image: url("../public/button.png");
   background-position: center;
   background-size: 100%;
+}
+.scrollButton:disabled {
+  opacity: 30%;
 }
 
 

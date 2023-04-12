@@ -98,7 +98,7 @@ export default {
   color: #f7ebe8;
 }
 html,body  {
-  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/background.jpg");
+  background-image: url("../../public/background.jpg");
   background-size: 100%;
   background-attachment: fixed;
 }
@@ -109,7 +109,7 @@ html,body  {
   margin-left: 30%;
   margin-right: 30%;
   margin-top: 10%;
-  background-image: url("c:/Users/Student/source/repos/capstone-team-bravo/vue/public/stone.png");
+  background-image: url("../../public/stone2.jpg");
 }
 input {
   margin-top: 10px;
