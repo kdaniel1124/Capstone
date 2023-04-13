@@ -1,5 +1,6 @@
 <template>
   <div class="card example">
+    <link rel="stylesheet" href="/path/to/styles/default.min.css">
     <h2 class="card-header">
       {{ example.codeLanguage }}
       <h3>{{ example.title }}</h3>
@@ -18,7 +19,7 @@
       </div>
     </h2>
     <div class="card-body">
-      <pre><code class="language-csharp">{{example.code}}</code></pre>
+      <code>{{example.code}}</code>
       <a v-if="isValidUrl" class="card-attribution" v-bind:href="testString">{{
         example.attributionUrl
       }}</a>
