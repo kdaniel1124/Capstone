@@ -29,7 +29,8 @@ CREATE TABLE examples (
 	title nvarchar(100) NOT NULL,
 	code_language nvarchar(50) NOT NULL, 
 	code nvarchar (MAX) NOT NULL,
-	attribution nvarchar (300),
+	attribution_author nvarchar (300),
+	attribution_url nvarchar (300),
 )
 
 -- Populate default data for testing: user and admin with password of 'password'
