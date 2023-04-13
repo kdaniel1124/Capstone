@@ -4,8 +4,8 @@
       {{ example.codeLanguage }}
       <h3>{{ example.title }}</h3>
       <div>
-        <button class="scrollButton" @click.prevent="copyCode">
-          Copy Code
+        <button class="btn btn-primary, scrollButton" @click.prevent="copyCode">
+          Copy
         </button>
         <button
           v-if="this.$store.state.user.role === 'admin'"
@@ -43,6 +43,7 @@ export default {
     },
     copyCode() {
       navigator.clipboard.writeText(this.example.code);
+      alert('Copied to Clipboard');
     },
   },
   computed: {
@@ -89,5 +90,8 @@ export default {
   background-color: $light;
   color: $dark;
   border: 4px solid black;
+}
+#editButton {
+  background-size: cover;
 }
 </style>

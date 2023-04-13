@@ -9,5 +9,7 @@ namespace Capstone.DAO
         void AddExample(Example newExample);
         void UpdateExample(Example updatedExample);
 
+        List<Example> GetFilteredExamples(string searchString);
+
     }
 }

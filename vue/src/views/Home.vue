@@ -3,7 +3,7 @@
     <h1>.NetCronomicon</h1>
     <p>A Tome revealing all information in the coding world.</p>
     
-    <example-card v-for="example in examples" :key="example.exampleId" :example="example"/>
+    <example-card v-for="example in this.$store.state.examples" :key="example.exampleId" :example="example"/>
 
   </div>
 </template>
@@ -19,14 +19,10 @@ export default {
 
 data() {
   return {
-    examples: []
   }
 },
   created() {
-    ExamplesService.getAllExamples()
-              .then(response => {
-                this.examples = response.data;
-              })
+    ExamplesService.getFilteredExamples(this.$store.state.searchString).then( response => this.$store.commit("SET_EXAMPLES_LIST", response.data))
 }
 };
 

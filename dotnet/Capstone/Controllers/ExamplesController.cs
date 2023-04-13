@@ -41,5 +41,12 @@ namespace Capstone.Controllers
 
             return Ok();
         }
+        [HttpGet("filtered")]
+        public ActionResult GetFilteredExamples(string searchString)
+        {
+            List<Example> filteredExamples = examplesDAO.GetFilteredExamples(searchString);
+
+            return Ok(filteredExamples);
+        }
     }
 }
