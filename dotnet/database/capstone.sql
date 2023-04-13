@@ -42,11 +42,11 @@ INSERT INTO examples (title, code_language, code ) VALUES('How to make a List', 
 INSERT INTO examples (title, code_language, code ) VALUES('How to make an Array', 'C#', 'int[] myNum = {10, 20, 30, 40};');
 INSERT INTO examples (title, code_language, code ) VALUES('How to make a For Loop', 'C#', 'for (int i = 1; i <= 100; i++) { if (i % 3 == 0 && i % 5 == 0)  {Console.WriteLine("FizzBuzz")');
 
-INSERT INTO examples (title, code_language, code ) VALUES('@title', '@codeLanguage', '@code');
-
 
 
 SELECT * FROM examples
+
+SELECT example_id, title, code_language, code, attribution_author, attribution_url FROM examples WHERE code_language LIKE '@searchString' OR title LIKE '@searchString' OR code LIKE '@searchString' OR attribution_author LIKE '@searchString'
 
 
 

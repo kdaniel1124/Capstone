@@ -72,7 +72,7 @@ namespace Capstone.DAO
             {
                 conn.Open();
 
-                const string sql = "SELECT * FROM examples";
+                const string sql = "SELECT example_id, title, code_language, code, attribution_author, attribution_url FROM examples";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -90,6 +90,41 @@ namespace Capstone.DAO
 
                     results.Add(example);
 
+                }
+                return results;
+            }
+        }
+        public List<Example> GetFilteredExamples(string searchString)
+        {
+            List<Example> results = new List<Example>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql = "SELECT example_id, title, code_language, code, attribution_author, attribution_url " +
+                    "FROM examples " +
+                    "WHERE code_language LIKE @searchString OR title LIKE @searchString OR code LIKE @searchString OR attribution_author LIKE @searchString ";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                searchString = "%" + searchString + "%";
+
+                cmd.Parameters.AddWithValue("@searchString", searchString);
+                
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Example example = new Example();
+
+                    example.Title = Convert.ToString(reader["title"]);
+                    example.CodeLanguage = Convert.ToString(reader["code_language"]);
+                    example.Code = Convert.ToString(reader["code"]);
+                    example.ExampleId = Convert.ToInt32(reader["example_id"]);
+                    example.AttributionAuthor = Convert.ToString(reader["attribution_author"]);
+                    example.AttributionUrl = Convert.ToString(reader["attribution_url"]);
+
+                    results.Add(example);
                 }
                 return results;
             }

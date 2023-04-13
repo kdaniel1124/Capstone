@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
+
 Vue.use(Vuex)
 
 /*
@@ -25,6 +26,8 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {}, // If a user is an admin, their user.role will be 'admin'
     currentExample: {},
+    searchString: '',
+    examples: [],
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -45,6 +48,12 @@ export default new Vuex.Store({
     },
     SET_CURRENT_EXAMPLE(state, example) {
       state.currentExample = example;
+    },
+    SET_SEARCH_STRING(state, searchString) {
+      state.searchString = searchString;
+    },
+    SET_EXAMPLES_LIST(state, examples) {
+      state.examples = examples;
     }
   }
 })
