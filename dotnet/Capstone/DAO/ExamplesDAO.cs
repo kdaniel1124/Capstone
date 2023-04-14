@@ -87,6 +87,7 @@ namespace Capstone.DAO
                     example.ExampleId = Convert.ToInt32(reader["example_id"]);
                     example.AttributionAuthor = Convert.ToString(reader["attribution_author"]);
                     example.AttributionUrl = Convert.ToString(reader["attribution_url"]);
+                    example.Approved = Convert.ToBoolean(reader["approved"]);
 
                     results.Add(example);
 
@@ -123,6 +124,7 @@ namespace Capstone.DAO
                     example.ExampleId = Convert.ToInt32(reader["example_id"]);
                     example.AttributionAuthor = Convert.ToString(reader["attribution_author"]);
                     example.AttributionUrl = Convert.ToString(reader["attribution_url"]);
+                    example.Approved = Convert.ToBoolean(reader["approved"]);
 
                     results.Add(example);
                 }
