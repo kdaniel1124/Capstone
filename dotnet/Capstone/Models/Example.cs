@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace Capstone.Models
 {
@@ -13,7 +14,8 @@ namespace Capstone.Models
         public int ExampleId { get; set; }
 
         public string AttributionAuthor { get; set; } 
-        public string AttributionUrl { get; set; } 
+        public string AttributionUrl { get; set; }
+        public bool Approved { get; set; } = false;
 
     }
 }
