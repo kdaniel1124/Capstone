@@ -6,11 +6,13 @@
     <!-- If you start to get random styling you don't like, remove container from this div -->
     <nav id="nav">
       <div id="navCluster">
-        <router-link class="nav-item" v-bind:to="{ name: 'home' }">
-          <img src="TomeTest.png" />
-          <!-- This is a font awesome icon -->
-          Home
-        </router-link>
+        <button class="nav-item" @click="refreshHomePage()">
+          <router-link class="nav-item" v-bind:to="{ name: 'home' }">
+            <img src="TomeTest.png" />
+            <!-- This is a font awesome icon -->
+            Home
+          </router-link>
+        </button>
         <router-link class="nav-item" :to="{ name: 'newExample' }">
           &nbsp; | &nbsp;Suggest New Example
         </router-link>
@@ -56,13 +58,22 @@
 </template>
 
 <script>
-import ExamplesService from '@/services/ExamplesService.js';
+import ExamplesService from "@/services/ExamplesService.js";
 
 export default {
   methods: {
     setSearchString() {
       this.$store.commit("SET_SEARCH_STRING", this.searchString);
-      ExamplesService.getFilteredExamples(this.$store.state.searchString).then( response => this.$store.commit("SET_EXAMPLES_LIST", response.data))
+      ExamplesService.getFilteredExamples(this.$store.state.searchString).then(
+        (response) => this.$store.commit("SET_EXAMPLES_LIST", response.data)
+      );
+    },
+    refreshHomePage() {
+      this.$store.commit("SET_SEARCH_STRING", "");
+      ExamplesService.getFilteredExamples(this.$store.state.searchString).then(
+        (response) => this.$store.commit("SET_EXAMPLES_LIST", response.data)
+      );
+      window.location.reload();
     },
   },
   data() {
@@ -93,6 +104,8 @@ body {
   font-family: "Metal Mania", cursive;
   text-shadow: 2px 2px 2px black;
   text-decoration: none;
+  background-color: transparent;
+  border: none;
 }
 a:hover {
   color: $highlight;
@@ -106,6 +119,7 @@ img {
   background-position: center;
   background-size: 100%;
   margin-left: 8px;
+  font-family: "Metal Mania";
 }
 
 .scrollButton:disabled {
