@@ -6,7 +6,7 @@
     <!-- If you start to get random styling you don't like, remove container from this div -->
     <nav id="nav">
       <div id="navCluster">
-        <router-link class="nav-item" v-bind:to="{ name: 'home' }">
+        <router-link class="nav-item" @click="resetHome()" v-bind:to="{ name: 'home',  }" >
           <img src="TomeTest.png" />
           <!-- This is a font awesome icon -->
           Home
@@ -62,6 +62,10 @@ export default {
   methods: {
     setSearchString() {
       this.$store.commit("SET_SEARCH_STRING", this.searchString);
+      ExamplesService.getFilteredExamples(this.$store.state.searchString).then( response => this.$store.commit("SET_EXAMPLES_LIST", response.data))
+    },
+    resetHome() {
+      this.$store.commit("SET_SEARCH_STRING", "");
       ExamplesService.getFilteredExamples(this.$store.state.searchString).then( response => this.$store.commit("SET_EXAMPLES_LIST", response.data))
     },
   },
