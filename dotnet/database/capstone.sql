@@ -38,19 +38,90 @@ CREATE TABLE examples (
 -- These values should not be kept when going to Production
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','Jg45HuwT7PZkfuKTz6IB90CtWY4=','LHxP4Xh7bN0=','user');
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin');
-INSERT INTO examples (title, code_language, code, approved ) VALUES('How to make a For Each Loop', 'C#', 'int[] numbers = {1, 2 ,3 ,4 ,5, 6} ; foreach (int item in numbers) { item = item + 1; }', 1);
-INSERT INTO examples (title, code_language, code, approved ) VALUES('How to make a List', 'C#', 'List<string> testList = new List<string>();', 1);
-INSERT INTO examples (title, code_language, code, approved ) VALUES('How to make an Array', 'C#', 'int[] myNum = {10, 20, 30, 40};', 1);
-INSERT INTO examples (title, code_language, code, approved ) VALUES('How to make a For Loop', 'C#', 'for (int i = 1; i <= 100; i++) { if (i % 3 == 0 && i % 5 == 0)  {Console.WriteLine("FizzBuzz")', 1);
+INSERT INTO
+examples (title, code_language, code, approved )
+VALUES
+('How to make a For Each Loop', 'C#',
+'int[] numbers = {1, 2 ,3 ,4 ,5, 6};
+foreach (int item in numbers)
+ {
+	item = item + 1; 
+  }', 1);
 
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to make a List', 'C#', 'List<string> testList = new List<string>();', 1);
 
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to make an Array', 'C#', 'int[] myNum = {10, 20, 30, 40};', 1);
 
-SELECT * FROM examples
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to make a For Loop', 'C#',
+'for (int i = 1; i <= 100; i++)
+ { 
+	if (i % 3 == 0 && i % 5 == 0)
+	{
+		{Console.WriteLine("FizzBuzz")
+	}
+ }', 1);
+
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to create Concatinated String', 'C#',
+'String first = "Skele";
+ String Last = "Tor";
+ String name = first + last;', 1);
+
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to add comments', 'C#',
+'For a single line comment do //
+ For a mult line comment do /* at the beginning and */ at the end
+ For a To Do list do // TODO:', 1)
+
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to print to the console', 'C#',
+'console.writeline("Hello World");', 1)
+
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to declare a multitude of Variables', 'C#',
+'int number = 42;
+ long longNumber = 42000000;
+ double doubleNumber = 42.42;
+ decimal decimalNumber = 42.42m;
+ char forSomeReasonOnlyOneLetter = D;
+ bool isMattTheBestTeacher = true;', 1)
+
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to take in user input', 'C#',
+'console.ReadLine();', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to set an access modifier and what they do', 'C#',
+'public int (Accessible by any other code)
+ private int (Only Accessible by code in the same class)
+ protected int (Only Accessible by code in the same class or derived class)
+ abstract class (Class is intended only to be a bse of other classes)', 1)
+ 
 
 SELECT example_id, title, code_language, code, attribution_author, attribution_url FROM examples WHERE code_language LIKE '@searchString' OR title LIKE '@searchString' OR code LIKE '@searchString' OR attribution_author LIKE '@searchString'
 
 
-
+SELECT * FROM examples
 GO
 
 
