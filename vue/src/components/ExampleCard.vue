@@ -1,6 +1,5 @@
 <template>
   <div class="card example">
-    <link rel="stylesheet" href="/path/to/styles/default.min.css">
     <h2 class="card-header">
       {{ example.codeLanguage }}
       <h3>{{ example.title }}</h3>
@@ -19,7 +18,7 @@
       </div>
     </h2>
     <div class="card-body">
-      <code>{{example.code}}</code>
+      <pre><code class="language autodetect">{{example.code}}</code></pre>
       <a v-if="isValidUrl" class="card-attribution" v-bind:href="testString">{{
         example.attributionUrl
       }}</a>
@@ -30,6 +29,7 @@
 </template>
 
 <script>
+let hljs = require('highlight.js')
 export default {
   props: ["example"],
   data() {
@@ -46,6 +46,9 @@ export default {
       navigator.clipboard.writeText(this.example.code);
       alert('Copied to Clipboard');
     },
+  },
+  mounted() {
+    hljs.highlightAll()
   },
   computed: {
     isValidUrl() {
@@ -88,7 +91,7 @@ export default {
   color: $dark;
 }
 .card-body {
-  background-color: $light;
+  background-color: rgb(105, 105, 105);
   color: $dark;
   border: 4px solid black;
 }
