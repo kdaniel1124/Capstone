@@ -22,8 +22,8 @@ namespace Capstone.DAO
             {
                 conn.Open();
 
-                string sql = "INSERT INTO examples (title, code_language, code, attribution_author, attribution_url) " +
-                    "VALUES(@title, @codeLanguage, @code, @attributionAuthor, @attributionUrl);";
+                string sql = "INSERT INTO examples (title, code_language, code, attribution_author, attribution_url, approved) " +
+                    "VALUES(@title, @codeLanguage, @code, @attributionAuthor, @attributionUrl, 0);";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -103,7 +103,7 @@ namespace Capstone.DAO
             {
                 conn.Open();
 
-                string sql = "SELECT example_id, title, code_language, code, attribution_author, attribution_url " +
+                string sql = "SELECT example_id, title, code_language, code, attribution_author, attribution_url, approved " +
                     "FROM examples " +
                     "WHERE code_language LIKE @searchString OR title LIKE @searchString OR code LIKE @searchString OR attribution_author LIKE @searchString ";
 
