@@ -46,7 +46,7 @@ VALUES
 foreach (int item in numbers)
  {
 	item = item + 1; 
-  }', 1);
+ }', 1);
 
 INSERT INTO
 examples (title, code_language, code, approved ) 
@@ -68,23 +68,23 @@ VALUES
 	{
 		{Console.WriteLine("FizzBuzz")
 	}
- }', 1);
+  }', 1);
 
 INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
 ('How to create Concatinated String', 'C#',
 'String first = "Skele";
- String Last = "Tor";
- String name = first + last;', 1);
+String Last = "Tor";
+String name = first + last;', 1);
 
  INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
 ('How to add comments', 'C#',
 'For a single line comment do //
- For a mult line comment do /* at the beginning and */ at the end
- For a To Do list do // TODO:', 1)
+For a mult line comment do /* at the beginning and */ at the end
+For a To Do list do // TODO:', 1)
 
  INSERT INTO
 examples (title, code_language, code, approved ) 
@@ -97,11 +97,11 @@ examples (title, code_language, code, approved )
 VALUES
 ('How to declare a multitude of Variables', 'C#',
 'int number = 42;
- long longNumber = 42000000;
- double doubleNumber = 42.42;
- decimal decimalNumber = 42.42m;
- char forSomeReasonOnlyOneLetter = D;
- bool isMattTheBestTeacher = true;', 1)
+long longNumber = 42000000;
+double doubleNumber = 42.42;
+decimal decimalNumber = 42.42m;
+char forSomeReasonOnlyOneLetter = D;
+bool isMattTheBestTeacher = true;', 1)
 
  INSERT INTO
 examples (title, code_language, code, approved ) 
@@ -113,10 +113,63 @@ examples (title, code_language, code, approved )
 VALUES
 ('How to set an access modifier and what they do', 'C#',
 'public int (Accessible by any other code)
- private int (Only Accessible by code in the same class)
- protected int (Only Accessible by code in the same class or derived class)
- abstract class (Class is intended only to be a bse of other classes)', 1)
- 
+private int (Only Accessible by code in the same class)
+protected int (Only Accessible by code in the same class or derived class)
+abstract class (Class is intended only to be a bse of other classes)', 1)
+
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to use SELECT', 'SQL',
+'SELECT a.cats FROM animals a', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to select with a filter', 'SQL',
+'SELECT a.cats FROM animals a WHERE a.name = "Louise"', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to use ORDER BY', 'SQL',
+'SELECT a.cats FROM animals a ORDER BY cutest DESC;', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to use JOIN', 'SQL',
+'SELECT a.cats, t.small FROM animals a JOIN towers t ON t.tower_size = a.animal_size', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to create a table', 'SQL',
+'CREATE TABLE animals 
+pet_id INT PRIMARY KEY,
+pet_name NVARCHAR(100),
+pet_type NVARCHAR(100)', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to delte from a table', 'SQL',
+'DELETE FROM animals WHERE pet_type = Dog', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to update a table in SQL', 'SQL',
+'UPDATE animals SET louis = louise', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('Using order by in sql', 'SQL',
+'SELECT pet_id FROM animals ORDER BY pet_cuteness ASC', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+ ('USING like in SQL', 'SQL',
+ 'SELECT pet_name FROM animals WHERE first_name like loui%', 1)
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to use null in sql', 'SQL',
+'SELECT pet_name FROM animals WHERE pet_owner = null', 1)
 
 SELECT example_id, title, code_language, code, attribution_author, attribution_url FROM examples WHERE code_language LIKE '@searchString' OR title LIKE '@searchString' OR code LIKE '@searchString' OR attribution_author LIKE '@searchString'
 
