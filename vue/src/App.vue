@@ -36,6 +36,13 @@
         >
           &nbsp; | &nbsp;Logout
         </router-link>
+        <router-link
+          class="nav-item"
+          v-bind:to="{name: 'adminPanel'}"
+          v-if="this.$store.state.user.role === 'admin'"
+          >
+          &nbsp; | &nbsp;Admin
+        </router-link>
       </div>
       <form class="form-inline">
         <input
@@ -128,5 +135,15 @@ img {
 #nav {
   display: flex;
   justify-content: space-between;
+  position: static;
+}
+.stone-button {
+    background-image: url("../public/stone2.jpg");
+  background-position: center;
+  background-size: 100%;
+  margin-left: 8px;
+  font-family: "Metal Mania";
+  color: #e54b4b;
+  font-size: 30px;
 }
 </style>

@@ -2,9 +2,32 @@
   <div class="home">
     <h1>.NetCronomicon</h1>
     <p>A Tome revealing all information in the coding world.</p>
+    <p>Filter by language</p>
+    <ul id="languages" class="nav justify-content-center">
+      <li class="nav-item">
+        <button :class="{ active: (this.$store.state.selectedLanguage == 'C#')}" class="stone-button" @click="setSelectedLanguage('C#')">
+          C#
+        </button>
+      </li>
+      <li class="nav-item">
+        <button :class="{ active: (this.$store.state.selectedLanguage == 'Java')}" class="stone-button" @click="setSelectedLanguage('Java')">
+          Java
+        </button>
+      </li>
+      <li class="nav-item">
+        <button :class="{ active: (this.$store.state.selectedLanguage == 'SQL')}" class="stone-button" @click="setSelectedLanguage('SQL')">
+          SQL
+        </button>
+      </li>
+      <li class="nav-item">
+        <button :class="{ active: (this.$store.state.selectedLanguage == 'JavaScript')}" class="stone-button" @click="setSelectedLanguage('JavaScript')">
+          JavaScript
+        </button>
+      </li>
+    </ul>
 
     <example-card
-      v-for="example in this.$store.state.examples"
+      v-for="example in languageFilteredExamples"
       :key="example.exampleId"
       :example="example"
     />
@@ -19,7 +42,27 @@ export default {
   components: {
     ExampleCard,
   },
-
+  computed: {
+    languageFilteredExamples() {
+      if (!this.$store.state.selectedLanguage) {
+        return this.$store.state.examples;
+      } else {
+        return this.$store.state.examples.filter(
+          (e) => e.codeLanguage == this.$store.state.selectedLanguage
+        );
+      }
+    },
+  },
+  methods: {
+    setSelectedLanguage(selectedLanguage) {
+      if (this.$store.state.selectedLanguage == selectedLanguage) {
+        this.$store.commit("SET_SELECTED_LANGUAGE", "");
+      } else {
+        this.$store.commit("SET_SELECTED_LANGUAGE", selectedLanguage);
+      }
+      console.log(this.$store.state.selectedLanguage);
+    },
+  },
   data() {
     return {};
   },
@@ -44,4 +87,16 @@ h1 {
 p {
   font-size: 35px;
 }
+#languages > li > a {
+  font-size: 30px;
+  color: #e54b4b;
+}
+.stone-button:active,
+.active {
+  top: 2px;
+  left: 1px;
+  border-color: white;
+  color:white;
+}
+
 </style>

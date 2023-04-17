@@ -28,6 +28,7 @@ export default new Vuex.Store({
     currentExample: {},
     searchString: '',
     examples: [],
+    selectedLanguage: "",
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -54,6 +55,9 @@ export default new Vuex.Store({
     },
     SET_EXAMPLES_LIST(state, examples) {
       state.examples = examples;
+    },
+    SET_SELECTED_LANGUAGE(state, language) {
+      state.selectedLanguage = language;
     }
   }
 })
