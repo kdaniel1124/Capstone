@@ -7,6 +7,7 @@ import Register from "../views/Register.vue";
 import store from "../store/index";
 import NewExample from "../views/AddExample.vue";
 import UpdateExample from "../views/UpdateExample.vue";
+import AdminPanel from "../views/AdminPanel.vue"
 
 Vue.use(Router);
 
@@ -71,6 +72,14 @@ const router = new Router({
       path: "/update",
       name: "updateExample",
       component: UpdateExample,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: "/admin",
+      name: "adminPanel",
+      component: AdminPanel,
       meta: {
         requiresAuth: true,
       },

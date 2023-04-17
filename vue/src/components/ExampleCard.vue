@@ -15,10 +15,28 @@
         >
           Edit
         </button>
+        <!-- Will work on 4.18
+        <button
+          v-if="this.$store.state.user.role === 'admin'"
+          @click.prevent="editExample"
+          class="btn btn-primary, scrollButton"
+          id="edit-button"
+        >
+          Post
+        </button>
+        <button
+          v-if="this.$store.state.user.role === 'admin'"
+          @click.prevent="editExample"
+          class="btn btn-primary, scrollButton"
+          id="edit-button"
+        >
+          Deny
+        </button>
+        -->
       </div>
     </h2>
     <div class="card-body">
-      <pre><code class="language autodetect">{{example.code}}</code></pre>
+      <pre><code v-bind:class="addClassLogic">{{example.code}}</code></pre>
       <a v-if="isValidUrl" class="card-attribution" v-bind:href="testString">{{
         example.attributionUrl
       }}</a>
@@ -62,7 +80,26 @@ export default {
         return true;
       }
     },
+    addClassLogic() {
+        let displayCode = document.getElementById("actual-code")
+        console.log('before transform!', displayCode)
+        console.log('code language detect check', this.example.codeLanguage)
+        switch(this.example.codeLanguage){
+          case "C#":
+            return "language cs"
+          case "Java":
+            return "language java";
+          case "SQL":
+            return "language sql";
+          case "JavaScript":
+            return "language js";
+          default: console.log("must be c sharp!")
+        }
+        console.log('after transform!', displayCode)
+        return "language autodetect";
+    },
   },
+  
 };
 </script>
 
