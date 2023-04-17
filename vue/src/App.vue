@@ -36,6 +36,13 @@
         >
           &nbsp; | &nbsp;Logout
         </router-link>
+        <router-link
+          class="nav-item"
+          v-bind:to="{name: 'adminPanel'}"
+          v-if="this.$store.state.user.role === 'admin'"
+          >
+          &nbsp; | &nbsp;Admin
+        </router-link>
       </div>
       <form class="form-inline">
         <input
