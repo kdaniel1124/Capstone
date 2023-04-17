@@ -83,7 +83,7 @@ examples (title, code_language, code, approved )
 VALUES
 ('How to add comments', 'C#',
 'For a single line comment do //
- For a mult line comment do /* at the beginning and */ at the end
+ For a multi line comment do /* at the beginning and */ at the end
  For a To Do list do // TODO:', 1)
 
  INSERT INTO
