@@ -255,8 +255,73 @@ VALUES
               System.out.println(i);
               i--;
          }while(i>1);', 1)
-SELECT example_id, title, code_language, code, attribution_author, attribution_url FROM examples WHERE code_language LIKE '@searchString' OR title LIKE '@searchString' OR code LIKE '@searchString' OR attribution_author LIKE '@searchString'
-
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('Data types', 'JavaScript',
+'var age = 4000;
+var name = Skeletor;
+var truth = false;', 1)
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to make an object', 'JavaScript',
+'var skeleton = {
+var age - 4000,
+var firstName = Skel,
+var lastName = tor,}', 1)
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to include an external file', 'JavaScript',
+'<script src="Examplefilename.js"></script>', 1)
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to use If else', 'JavaScript',
+'if ((age >= 120) && (age < 4000)) {
+status = "Skeleton";
+} else {
+status = "Human";
+}', 1)
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to use a while Loop', 'JavaScript',
+'var i = 1;
+while (i < 100) {
+i *= 2
+document.write(i + ", ");
+}', 1)
+ INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to use a For Loop', 'JavaScript',
+'for (var i = 0; i < 10; i++) {
+document.write(i + ": " + i*3);
+}', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to make an array', 'JavaScript',
+'var skelles = ["Eddie Deader", "Bugs Boney", "Bone Thug"];', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to make an on click event', 'JavaScript',
+'<button onclick="myFunction()">Click me</button>', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to make a div', 'JavaScript',
+ '<div class="card example">
+	<h2> example h2 </h2>
+  </h2>', 1)
+INSERT INTO
+examples (title, code_language, code, approved ) 
+VALUES
+('How to add an image', 'JavaScript',
+'<img src="TestImg.png" />', 1)
 
 SELECT * FROM examples
 GO
