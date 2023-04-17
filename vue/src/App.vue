@@ -132,5 +132,15 @@ img {
 #nav {
   display: flex;
   justify-content: space-between;
+  position: static;
+}
+.stone-button {
+    background-image: url("../public/stone2.jpg");
+  background-position: center;
+  background-size: 100%;
+  margin-left: 8px;
+  font-family: "Metal Mania";
+  color: #e54b4b;
+  font-size: 30px;
 }
 </style>
