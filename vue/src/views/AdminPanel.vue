@@ -38,24 +38,16 @@ export default {
       (response) => this.$store.commit("SET_EXAMPLES_LIST", response.data)
     );
   },
-<<<<<<< HEAD
-  data() {
-    return {};
-=======
   methods: {
     swapLanguageActivity(name) {
       this.$store.commit("SWAP_LANGUAGE_ACTIVITY", name);
     }
->>>>>>> 8a50a53e1596cc521d004bd72820c10df59b0ab3
   },
   computed: {
     examplesToApprove() {
       let examplesInitial = this.$store.state.examples;
       examplesInitial = examplesInitial.filter((x) => x.approved == "0");
-<<<<<<< HEAD
-=======
       console.log(examplesInitial);
->>>>>>> 8a50a53e1596cc521d004bd72820c10df59b0ab3
       return examplesInitial;
     },
   },
@@ -63,10 +55,7 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
-=======
 .inactiveLanguage {
   color: black
 }
->>>>>>> 8a50a53e1596cc521d004bd72820c10df59b0ab3
 </style>
