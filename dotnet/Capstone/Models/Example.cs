@@ -15,7 +15,7 @@ namespace Capstone.Models
 
         public string AttributionAuthor { get; set; } 
         public string AttributionUrl { get; set; }
-        public int Approved { get; set; } = 2;
+        public int Approved { get; set; }
 
     }
 }

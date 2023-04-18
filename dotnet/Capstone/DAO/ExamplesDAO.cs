@@ -49,7 +49,8 @@ namespace Capstone.DAO
                     "code_language = @codeLanguage, " +
                     "code = @codeBody, " +
                     "attribution_author = @attributionAuthor, " +
-                    "attribution_url = @attributionUrl " +
+                    "attribution_url = @attributionUrl, " +
+                    "approved = @approved " +
                     "WHERE example_id = @exampleId";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -60,6 +61,7 @@ namespace Capstone.DAO
                 cmd.Parameters.AddWithValue("@attributionAuthor", updatedExample.AttributionAuthor);
                 cmd.Parameters.AddWithValue("@attributionUrl", updatedExample.AttributionUrl);
                 cmd.Parameters.AddWithValue("@exampleId", updatedExample.ExampleId);
+                cmd.Parameters.AddWithValue("@approved", updatedExample.Approved);
 
                 cmd.ExecuteNonQuery();
             }

@@ -15,7 +15,7 @@
         >
           Edit
         </button>
-        <!--
+        
         <button
           v-if="this.$store.state.user.role === 'admin' && this.example.approved == '0'"
           @click.prevent="approveExample"
@@ -32,7 +32,7 @@
         >
           Deny
         </button>
-        -->
+        
       </div>
     </h2>
     <div class="card-body">
@@ -71,10 +71,10 @@ export default {
     //Can only be seen by an admin and if the post is pending approval "0"
     approveExample() {  
       console.log(this.example)
-      this.example.approved = '1'
+      this.example.approved = 1
       ExamplesService.updateExample(this.example)
         .then(() => {
-          window.location.reload()
+  
         })
         .catch((err) => console.error("Could not add example :c", err));
     },
@@ -82,10 +82,10 @@ export default {
     //Can only be seen by an admin and if the post is pending approval "0"
     denyExample() {  
       console.log(this.example)
-      this.example.approved = '2'
+      this.example.approved = 2
       ExamplesService.updateExample(this.example)
         .then(() => {
-          window.location.reload()
+          
         })
         .catch((err) => console.error("Could not add example :c", err));
     },

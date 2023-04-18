@@ -46,7 +46,7 @@ export default {
   computed: {
     examplesToApprove() {
       let examplesInitial = this.$store.state.examples;
-      examplesInitial = examplesInitial.filter((x) => x.approved == "0");
+      examplesInitial = examplesInitial.filter((x) => x.approved == 0);
       console.log(examplesInitial);
       return examplesInitial;
     },
