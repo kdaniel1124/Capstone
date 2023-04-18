@@ -40,7 +40,6 @@ namespace Capstone.DAO
 
         public void UpdateExample(Example updatedExample)
         {
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();

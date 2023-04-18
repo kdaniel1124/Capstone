@@ -30,26 +30,6 @@ export default new Vuex.Store({
     examples: [],
     selectedLanguage: "",
     supportedLanguages: [
-      {
-        Name: 'C#',
-        HighlightJs: 'cs',
-        Active: true,
-      },
-      {
-        Name: 'Java',
-        HighlightJs: 'java',
-        Active: true,
-      },
-      {
-        Name: 'SQL',
-        HighlightJs: 'sql',
-        Active: true,
-      },
-      {
-        Name: 'JavaScript',
-        HighlightJs: 'js',
-        Active: true,
-      },
     ]
   },
   mutations: {
@@ -78,23 +58,11 @@ export default new Vuex.Store({
     SET_EXAMPLES_LIST(state, examples) {
       state.examples = examples;
     },
+    SET_LANGUAGES_LIST(state, languages) {
+      state.supportedLanguages = languages;
+    },
     SET_SELECTED_LANGUAGE(state, language) {
       state.selectedLanguage = language;
     },
-    SWAP_LANGUAGE_ACTIVITY(state, name) {
-      for (let language of state.supportedLanguages)
-      {
-        if (language.Name == name) {
-          language.Active = !language.Active;
-          if(language.Active){
-            alert(language.Name + ' has been activated')
-          }
-          if(!language.Active){
-            alert(language.Name + ' has been deactivated')
-          }
-        }
-        
-      }
-    }
   }
 })

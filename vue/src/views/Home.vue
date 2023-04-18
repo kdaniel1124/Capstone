@@ -37,6 +37,7 @@
 
 <script>
 import ExamplesService from "@/services/ExamplesService.js";
+import LanguageService from "@/services/LanguageService.js";
 import ExampleCard from "@/components/ExampleCard.vue";
 export default {
   name: "home",
@@ -70,6 +71,9 @@ export default {
   created() {
     ExamplesService.getFilteredExamples(this.$store.state.searchString).then(
       (response) => this.$store.commit("SET_EXAMPLES_LIST", response.data)
+    );
+    LanguageService.getAllLanguages().then(
+      (response) => this.$store.commit("SET_LANGUAGES_LIST", response.data)
     );
       this.$store.commit("SET_SEARCH_STRING", "");
   },

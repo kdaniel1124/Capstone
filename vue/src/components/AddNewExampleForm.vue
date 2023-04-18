@@ -14,10 +14,10 @@
         </option>
         <option
           v-for="language in ActiveLanguages"
-          :key="language.Name"
-          :value="language.Name"
+          :key="language.languageName"
+          :value="language.languageName"
         >
-          {{ language.Name }}
+          {{ language.languageName }}
         </option>
         <!--<option value="C#">C#</option>
         <option value="Java">Java</option>
@@ -117,7 +117,7 @@ export default {
     },
     ActiveLanguages() {
       return this.$store.state.supportedLanguages.filter(
-        (language) => language.Active
+        (language) => language.active
       );
     },
   },

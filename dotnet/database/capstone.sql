@@ -24,6 +24,14 @@ CREATE TABLE users (
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 )
 
+CREATE TABLE supported_languages (
+	language_id int IDENTITY (1,1) NOT NULL,
+	language_name nvarchar (30) NOT NULL,
+	highlight_js nvarchar (30) NOT NULL,
+	active bit NOT NULL
+	CONSTRAINT PK_supported_languages PRIMARY KEY (language_id)
+)
+
 CREATE TABLE examples (
 	example_id int IDENTITY(1,1) NOT NULL,
 	title nvarchar(100) NOT NULL,
@@ -31,13 +39,27 @@ CREATE TABLE examples (
 	code nvarchar (MAX) NOT NULL,
 	attribution_author nvarchar (300),
 	attribution_url nvarchar (300),
-	approved int NOT NULL,
+	approved int NOT NULL
+	CONSTRAINT PK_examples PRIMARY KEY (example_id)
 )
-
 -- Populate default data for testing: user and admin with password of 'password'
 -- These values should not be kept when going to Production
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','Jg45HuwT7PZkfuKTz6IB90CtWY4=','LHxP4Xh7bN0=','user');
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin');
+
+INSERT INTO supported_languages (language_name, highlight_js, active)
+VALUES ('C#', 'cs', 1)
+
+INSERT INTO supported_languages (language_name, highlight_js, active)
+VALUES ('Java', 'java', 1)
+
+INSERT INTO supported_languages (language_name, highlight_js, active)
+VALUES ('SQL', 'sql', 1)
+
+INSERT INTO supported_languages (language_name, highlight_js, active)
+VALUES ('JavaScript', 'js', 1)
+
+
 INSERT INTO
 examples (title, code_language, code, approved )
 VALUES
