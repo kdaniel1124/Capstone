@@ -1,8 +1,9 @@
 <template>
   <section>
     <h1>Tome of Origination</h1>
+    <p>Your saved scriptures</p>
     <example-card
-      v-for="example in this.examplesToApprove"
+      v-for="example in this.privateExamples"
       :key="example.exampleId"
       :example="example"
     />
@@ -26,12 +27,13 @@ export default {
     return {};
   },
   computed: {
-    examplesToApprove() {
+    privateExamples() {
       let examplesInitial = this.$store.state.examples;
-      examplesInitial = examplesInitial.filter((x) => x.approved == "2");
+      examplesInitial = examplesInitial.filter((x) => x.approved == 2);
       console.log(examplesInitial);
       return examplesInitial;
     },
+    
   },
 };
 </script>

@@ -71,6 +71,7 @@ export default {
     ExamplesService.getFilteredExamples(this.$store.state.searchString).then(
       (response) => this.$store.commit("SET_EXAMPLES_LIST", response.data)
     );
+      this.$store.commit("SET_SEARCH_STRING", "");
   },
 };
 </script>

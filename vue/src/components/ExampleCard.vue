@@ -32,6 +32,14 @@
         >
           Deny
         </button>
+        <button
+          v-if="this.example.approved == '2'"
+          @click.prevent="suggestExample"
+          class="btn btn-primary, scrollButton"
+          id="edit-button"
+        >
+          Suggest
+        </button>
         
       </div>
     </h2>
@@ -86,6 +94,15 @@ export default {
       ExamplesService.updateExample(this.example)
         .then(() => {
           
+        })
+        .catch((err) => console.error("Could not add example :c", err));
+    },
+    suggestExample() {  
+      console.log(this.example)
+      this.example.approved = 0
+      ExamplesService.updateExample(this.example)
+        .then(() => {
+  
         })
         .catch((err) => console.error("Could not add example :c", err));
     },

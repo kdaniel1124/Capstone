@@ -15,7 +15,9 @@
         <option
           v-for="language in ActiveLanguages"
           :key="language.Name"
-          :value="language.Name">{{language.Name}}
+          :value="language.Name"
+        >
+          {{ language.Name }}
         </option>
         <!--<option value="C#">C#</option>
         <option value="Java">Java</option>
@@ -47,9 +49,7 @@
         ></textarea>
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"
-          >Author</label
-        >
+        <label for="exampleFormControlInput1" class="form-label">Author</label>
         <input
           type="text"
           class="form-control"
@@ -59,9 +59,7 @@
         />
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"
-          >URL</label
-        >
+        <label for="exampleFormControlInput1" class="form-label">URL</label>
         <input
           type="text"
           class="form-control"
@@ -70,8 +68,18 @@
           v-model="example.attributionUrl"
         />
       </div>
+      <div>
+        <label for="radio">
+          <input type="radio" v-model.number="example.approved" value= 2 />
+          Set private</label>
+        
+        <label for="radio"> 
+          <input type="radio" v-model.number="example.approved" value= 0 />
+         Set public </label>
+       
+      </div>
 
-      <input 
+      <input
         id="submitButton"
         class="btn btn-secondary, scrollButton"
         type="submit"
@@ -89,6 +97,7 @@ import ExamplesService from "@/services/ExamplesService.js";
 export default {
   data() {
     return {
+      checked: 0,
       example: {
         exampleId: 0,
         codeLanguage: "",
@@ -96,6 +105,7 @@ export default {
         code: "",
         attributionAuthor: "",
         attributionUrl: "",
+        approved: 0,
       },
     };
   },
@@ -109,7 +119,7 @@ export default {
       return this.$store.state.supportedLanguages.filter(
         (language) => language.Active
       );
-    }
+    },
   },
   methods: {
     addNewExample() {
@@ -126,8 +136,6 @@ export default {
 </script>
 
 <style>
-
-
 .form-group {
   display: flex;
   flex-direction: column;

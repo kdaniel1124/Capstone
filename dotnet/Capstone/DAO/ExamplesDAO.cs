@@ -23,7 +23,7 @@ namespace Capstone.DAO
                 conn.Open();
 
                 string sql = "INSERT INTO examples (title, code_language, code, attribution_author, attribution_url, approved) " +
-                    "VALUES(@title, @codeLanguage, @code, @attributionAuthor, @attributionUrl, 0);";
+                    "VALUES(@title, @codeLanguage, @code, @attributionAuthor, @attributionUrl, @approved);";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -32,6 +32,7 @@ namespace Capstone.DAO
                 cmd.Parameters.AddWithValue("@code", newExample.Code);
                 cmd.Parameters.AddWithValue("@attributionAuthor", newExample.AttributionAuthor);
                 cmd.Parameters.AddWithValue("@attributionUrl", newExample.AttributionUrl);
+                cmd.Parameters.AddWithValue("@approved", newExample.Approved);
 
                 cmd.ExecuteNonQuery();
             }
