@@ -29,6 +29,28 @@ export default new Vuex.Store({
     searchString: '',
     examples: [],
     selectedLanguage: "",
+    supportedLanguages: [
+      {
+        Name: 'C#',
+        HighlightJs: 'cs',
+        Active: true,
+      },
+      {
+        Name: 'Java',
+        HighlightJs: 'java',
+        Active: true,
+      },
+      {
+        Name: 'SQL',
+        HighlightJs: 'sql',
+        Active: true,
+      },
+      {
+        Name: 'JavaScript',
+        HighlightJs: 'js',
+        Active: true,
+      },
+    ]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -58,6 +80,21 @@ export default new Vuex.Store({
     },
     SET_SELECTED_LANGUAGE(state, language) {
       state.selectedLanguage = language;
+    },
+    SWAP_LANGUAGE_ACTIVITY(state, name) {
+      for (let language of state.supportedLanguages)
+      {
+        if (language.Name == name) {
+          language.Active = !language.Active;
+          if(language.Active){
+            alert(language.Name + ' has been activated')
+          }
+          if(!language.Active){
+            alert(language.Name + ' has been deactivated')
+          }
+        }
+        
+      }
     }
   }
 })

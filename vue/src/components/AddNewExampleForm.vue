@@ -12,10 +12,15 @@
         <option select disabled value="">
           Please select your programming language
         </option>
-        <option value="C#">C#</option>
+        <option
+          v-for="language in ActiveLanguages"
+          :key="language.Name"
+          :value="language.Name">{{language.Name}}
+        </option>
+        <!--<option value="C#">C#</option>
         <option value="Java">Java</option>
         <option value="JavaScript">JavaScript</option>
-        <option value="SQL">SQL</option>
+        <option value="SQL">SQL</option>-->
       </select>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label"
@@ -100,6 +105,11 @@ export default {
         this.example.codeLanguage && this.example.title && this.example.code
       );
     },
+    ActiveLanguages() {
+      return this.$store.state.supportedLanguages.filter(
+        (language) => language.Active
+      );
+    }
   },
   methods: {
     addNewExample() {
