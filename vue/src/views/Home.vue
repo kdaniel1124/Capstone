@@ -62,7 +62,6 @@ export default {
       } else {
         this.$store.commit("SET_SELECTED_LANGUAGE", selectedLanguage);
       }
-      console.log(this.$store.state.selectedLanguage);
     },
   },
   data() {
