@@ -31,7 +31,7 @@ CREATE TABLE examples (
 	code nvarchar (MAX) NOT NULL,
 	attribution_author nvarchar (300),
 	attribution_url nvarchar (300),
-	approved bit NOT NULL,
+	approved int NOT NULL,
 )
 
 -- Populate default data for testing: user and admin with password of 'password'
