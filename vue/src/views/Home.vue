@@ -30,6 +30,7 @@
       v-for="example in languageFilteredExamples"
       :key="example.exampleId"
       :example="example"
+
     />
   </div>
 </template>
@@ -43,13 +44,14 @@ export default {
     ExampleCard,
   },
   computed: {
+    //Added .filter to language filter to ONLY filter display public approved examples where approved == '1'
     languageFilteredExamples() {
       if (!this.$store.state.selectedLanguage) {
-        return this.$store.state.examples;
+        return this.$store.state.examples.filter( a => a.approved == '1');
       } else {
         return this.$store.state.examples.filter(
           (e) => e.codeLanguage == this.$store.state.selectedLanguage
-        );
+        ).filter( a => a.approved == '1');
       }
     },
   },
@@ -60,7 +62,6 @@ export default {
       } else {
         this.$store.commit("SET_SELECTED_LANGUAGE", selectedLanguage);
       }
-      console.log(this.$store.state.selectedLanguage);
     },
   },
   data() {

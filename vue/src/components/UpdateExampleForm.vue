@@ -104,7 +104,7 @@ export default {
   methods: {
    updateExample() {
       //let newExample = {id: this.id, language: this.language, title: this.title, codeBody: this.codeBody}
-
+      console.log(this.example)
       ExamplesService.updateExample(this.example)
         .then(() => {
           this.$router.push({ name: "home" });

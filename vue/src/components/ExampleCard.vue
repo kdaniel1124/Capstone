@@ -15,24 +15,24 @@
         >
           Edit
         </button>
-        <!-- Will work on 4.18
+        
         <button
-          v-if="this.$store.state.user.role === 'admin'"
-          @click.prevent="editExample"
+          v-if="this.$store.state.user.role === 'admin' && this.example.approved == '0'"
+          @click.prevent="approveExample"
           class="btn btn-primary, scrollButton"
           id="edit-button"
         >
           Post
         </button>
         <button
-          v-if="this.$store.state.user.role === 'admin'"
-          @click.prevent="editExample"
+          v-if="this.$store.state.user.role === 'admin' && this.example.approved == '0'"
+          @click.prevent="denyExample"
           class="btn btn-primary, scrollButton"
           id="edit-button"
         >
           Deny
         </button>
-        -->
+        
       </div>
     </h2>
     <div class="card-body">
@@ -48,6 +48,7 @@
 
 <script>
 let hljs = require('highlight.js')
+import ExamplesService from "@/services/ExamplesService.js";
 export default {
   props: ["example"],
   data() {
@@ -56,13 +57,37 @@ export default {
     };
   },
   methods: {
+    //Enters edit example page
     editExample() {  
       this.$store.commit("SET_CURRENT_EXAMPLE", this.example);
       this.$router.push({ name: "updateExample" });
     },
+    //Copies code to clipboard
     copyCode() {
       navigator.clipboard.writeText(this.example.code);
       alert('Copied to Clipboard');
+    },
+    //Approve updates the current examples approved status to "1", public and approved
+    //Can only be seen by an admin and if the post is pending approval "0"
+    approveExample() {  
+      console.log(this.example)
+      this.example.approved = 1
+      ExamplesService.updateExample(this.example)
+        .then(() => {
+  
+        })
+        .catch((err) => console.error("Could not add example :c", err));
+    },
+    //Deny updates the current examples approved status to "2", private and unapproved
+    //Can only be seen by an admin and if the post is pending approval "0"
+    denyExample() {  
+      console.log(this.example)
+      this.example.approved = 2
+      ExamplesService.updateExample(this.example)
+        .then(() => {
+          
+        })
+        .catch((err) => console.error("Could not add example :c", err));
     },
   },
   mounted() {
@@ -81,9 +106,6 @@ export default {
       }
     },
     addClassLogic() {
-        let displayCode = document.getElementById("actual-code")
-        console.log('before transform!', displayCode)
-        console.log('code language detect check', this.example.codeLanguage)
         switch(this.example.codeLanguage){
           case "C#":
             return "language cs"
@@ -93,9 +115,7 @@ export default {
             return "language sql";
           case "JavaScript":
             return "language js";
-          default: console.log("must be c sharp!")
         }
-        console.log('after transform!', displayCode)
         return "language autodetect";
     },
   },

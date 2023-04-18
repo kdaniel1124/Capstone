@@ -31,7 +31,7 @@ CREATE TABLE examples (
 	code nvarchar (MAX) NOT NULL,
 	attribution_author nvarchar (300),
 	attribution_url nvarchar (300),
-	approved bit NOT NULL,
+	approved int NOT NULL,
 )
 
 -- Populate default data for testing: user and admin with password of 'password'
@@ -173,7 +173,7 @@ VALUES
  INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('Data types in JAVA', 'JAVA',
+('Data types in Java', 'Java',
 'boolean=true (or false)
 char is single Character ie C
 byte is up to 8 numbers ie 12345678
@@ -181,21 +181,21 @@ short is up to 16 numbers ie 1234567891012345', 1)
  INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('How to Declare a variable', 'JAVA',
+('How to Declare a variable', 'Java',
 'string name = "Skeletor"
 int favoriteNumber = 42
 boolean isfourty = true;', 1)
  INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('How to make a for loop', 'JAVA',
+('How to make a for loop', 'Java',
 'for (int i = 0; i <= 10; i = i + 2) {
   System.out.println(i);
 }', 1)
 INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('How to make a for each loop', 'JAVA',
+('How to make a for each loop', 'Java',
 'String[] Skelles = {"Skeletor", "Bone Jovi", "Bone Cold steve austin", "Jack Marrow"};
 for (String i : skelles) {
   System.out.println(i);
@@ -203,7 +203,7 @@ for (String i : skelles) {
 INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('How to make a while loop', 'JAVA',
+('How to make a while loop', 'Java',
 'int Skelle = 2;
 switch (day) {
   case 1:
@@ -219,12 +219,12 @@ switch (day) {
 INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('How to make an array', 'JAVA',
+('How to make an array', 'Java',
 'String[] skelles = {"Jerry spinefield", "Morty McFly", "Nicholas Ribcage", "Walter Wight"};', 1)
 INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('How to make a map', 'JAVA',
+('How to make a map', 'Java',
 'Map<String, Integer> skelles = new Hashtable<>();
 
 skelles.put("Marrow Robbie", 1);
@@ -234,7 +234,7 @@ skelles.put("Death Bridges", 3);', 1)
  INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('If statements', 'JAVA',
+('If statements', 'Java',
 'int x = 42;
 int y = 77;
 if (x > y) {
@@ -243,13 +243,13 @@ if (x > y) {
  INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('How to make comments', 'JAVA',
+('How to make comments', 'Java',
 'For a single line comment do //
 For a mult line comment do /* at the beginning and */ at the end', 1)
  INSERT INTO
 examples (title, code_language, code, approved ) 
 VALUES
-('Do while loops', 'JAVA',
+('Do while loops', 'Java',
 'int i=10;
          do{
               System.out.println(i);

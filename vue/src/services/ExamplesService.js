@@ -13,5 +13,6 @@ export default {
     },
     getFilteredExamples(searchString) {
         return axios.get('examples/filtered?searchstring=' + searchString)
-    }
+    },
+    
 }

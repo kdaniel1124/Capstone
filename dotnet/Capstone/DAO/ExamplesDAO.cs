@@ -49,7 +49,8 @@ namespace Capstone.DAO
                     "code_language = @codeLanguage, " +
                     "code = @codeBody, " +
                     "attribution_author = @attributionAuthor, " +
-                    "attribution_url = @attributionUrl " +
+                    "attribution_url = @attributionUrl, " +
+                    "approved = @approved " +
                     "WHERE example_id = @exampleId";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -60,6 +61,7 @@ namespace Capstone.DAO
                 cmd.Parameters.AddWithValue("@attributionAuthor", updatedExample.AttributionAuthor);
                 cmd.Parameters.AddWithValue("@attributionUrl", updatedExample.AttributionUrl);
                 cmd.Parameters.AddWithValue("@exampleId", updatedExample.ExampleId);
+                cmd.Parameters.AddWithValue("@approved", updatedExample.Approved);
 
                 cmd.ExecuteNonQuery();
             }
@@ -87,7 +89,7 @@ namespace Capstone.DAO
                     example.ExampleId = Convert.ToInt32(reader["example_id"]);
                     example.AttributionAuthor = Convert.ToString(reader["attribution_author"]);
                     example.AttributionUrl = Convert.ToString(reader["attribution_url"]);
-                    example.Approved = Convert.ToBoolean(reader["approved"]);
+                    example.Approved = Convert.ToInt32(reader["approved"]);
 
                     results.Add(example);
 
@@ -124,7 +126,7 @@ namespace Capstone.DAO
                     example.ExampleId = Convert.ToInt32(reader["example_id"]);
                     example.AttributionAuthor = Convert.ToString(reader["attribution_author"]);
                     example.AttributionUrl = Convert.ToString(reader["attribution_url"]);
-                    example.Approved = Convert.ToBoolean(reader["approved"]);
+                    example.Approved = Convert.ToInt32(reader["approved"]);
 
                     results.Add(example);
                 }

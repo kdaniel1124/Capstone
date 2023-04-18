@@ -84,14 +84,10 @@ export default {
     },
     refreshHomePage() {
       this.$store.commit("SET_SEARCH_STRING", "");
-      ExamplesService.getFilteredExamples(this.$store.state.searchString).then(
-        (response) => this.$store.commit("SET_EXAMPLES_LIST", response.data)
-      );
+      //ExamplesService.getFilteredExamples(this.$store.state.searchString).then(
+      //  (response) => this.$store.commit("SET_EXAMPLES_LIST", response.data)
+      //);
       window.location.reload();
-    },
-    resetHome() {
-      this.$store.commit("SET_SEARCH_STRING", "");
-      ExamplesService.getFilteredExamples(this.$store.state.searchString).then( response => this.$store.commit("SET_EXAMPLES_LIST", response.data))
     },
   },
   data() {
