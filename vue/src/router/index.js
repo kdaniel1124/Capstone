@@ -8,6 +8,7 @@ import store from "../store/index";
 import NewExample from "../views/AddExample.vue";
 import UpdateExample from "../views/UpdateExample.vue";
 import AdminPanel from "../views/AdminPanel.vue"
+import UserPage from "../views/UserPage.vue"
 
 Vue.use(Router);
 
@@ -84,6 +85,14 @@ const router = new Router({
         requiresAuth: true,
       },
     },
+    {
+    path: "/user",
+    name: "user",
+    component: UserPage,
+    meta: {
+      requiresAuth: true,
+    },
+  },
   ],
 });
 

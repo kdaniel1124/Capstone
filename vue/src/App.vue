@@ -43,6 +43,12 @@
           >
           &nbsp; | &nbsp;Admin
         </router-link>
+        <router-link
+          class="nav-item"
+          v-bind:to="{ name: 'user' }"
+          v-if="$store.state.token"
+          >&nbsp; | &nbsp;User</router-link
+        >
       </div>
       <form class="form-inline">
         <input
@@ -52,6 +58,7 @@
           aria-label="Search"
           v-model="searchString"
         />
+        
         <input
           class="btn btn-outline my-2 my-sm-0, scrollButton"
           type="submit"

@@ -1,8 +1,6 @@
 <template>
   <section>
-    <h1>Grand Necromancer's View</h1>
-    <h2>Are These Scriptures... Worthy?</h2>
-
+    <h1>Tome of Origination</h1>
     <example-card
       v-for="example in this.examplesToApprove"
       :key="example.exampleId"
@@ -15,7 +13,7 @@
 import ExamplesService from "@/services/ExamplesService.js";
 import ExampleCard from "@/components/ExampleCard.vue";
 export default {
-  name: "adminPanel",
+  name: "user",
   components: {
     ExampleCard,
   },
@@ -30,7 +28,7 @@ export default {
   computed: {
     examplesToApprove() {
       let examplesInitial = this.$store.state.examples;
-      examplesInitial = examplesInitial.filter((x) => x.approved == "0");
+      examplesInitial = examplesInitial.filter((x) => x.approved == "2");
       console.log(examplesInitial);
       return examplesInitial;
     },
