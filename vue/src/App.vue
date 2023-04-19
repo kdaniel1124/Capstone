@@ -38,9 +38,9 @@
         </router-link>
         <router-link
           class="nav-item"
-          v-bind:to="{name: 'adminPanel'}"
+          v-bind:to="{ name: 'adminPanel' }"
           v-if="this.$store.state.user.role === 'admin'"
-          >
+        >
           &nbsp; | &nbsp;Admin
         </router-link>
         <router-link
@@ -58,7 +58,7 @@
           aria-label="Search"
           v-model="searchString"
         />
-        
+
         <input
           class="btn btn-outline my-2 my-sm-0, scrollButton"
           type="submit"
@@ -66,7 +66,6 @@
         />
       </form>
     </nav>
-
     <router-view />
   </div>
 </template>
@@ -145,7 +144,7 @@ img {
   position: static;
 }
 .stone-button {
-    background-image: url("../public/stone2.jpg");
+  background-image: url("../public/stone2.jpg");
   background-position: center;
   background-size: 100%;
   margin-left: 8px;
