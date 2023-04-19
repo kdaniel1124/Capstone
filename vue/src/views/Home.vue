@@ -94,7 +94,7 @@ export default {
       if (
         this.leftLit &&
         this.rightLit &&
-        this.$store.state.searchString.ToLower() == "doom"
+        this.$store.state.searchString.toLowerCase() == "doom"
       ) {
         return true;
       } else {
