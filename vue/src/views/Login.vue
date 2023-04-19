@@ -87,10 +87,10 @@ export default {
 </script>
 <style>
 button {
-  font-family: 'Metal Mania', cursive;
+  font-family: 'DotGothic16', sans-serif;
 }
 .form-group {
-  font-family: 'Metal Mania', cursive;
+  font-family: 'DotGothic16', sans-serif;
 }
 #registerLink {
   color: #f7ebe8;
