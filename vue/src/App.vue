@@ -2,7 +2,6 @@
      Note that you have classes from bootstrap available to you.
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
-
   <div id="app" class="container">
     <!-- If you start to get random styling you don't like, remove container from this div -->
     <nav id="nav">
@@ -68,14 +67,7 @@
       </form>
     </nav>
     <router-view />
-
-    <router-link
-          class="nav-item"
-          v-bind:to="{ name: 'doom' }"
-          >&nbsp; | &nbsp;Doom</router-link
-        >
   </div>
-  
 </template>
 
 <script>

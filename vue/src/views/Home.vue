@@ -5,6 +5,7 @@
     
     <p class="neon-text" data-text="A Tome revealing all information in the coding world.">A Tome revealing all information in the coding world.</p>
     </div>
+    
     <p>Filter by language</p>
     <ul id="languages" class="nav justify-content-center">
       <li class="nav-item">
@@ -46,7 +47,7 @@
         </button>
       </li>
     </ul>
-
+    
     <example-card
       v-for="example in languageFilteredExamples"
       :key="example.exampleId"
@@ -56,13 +57,20 @@
     <div id="candle-box">
       <img
         id="left-candle"
-        src="../../public/litCandle.gif"
+        src="../../public/doomskull.png"
         :class="{ isLit: leftLit }"
         @click="swapLeft()"
       />
+      <button
+          v-if="isDoom"
+          class="stone-button"
+          @click="doomTime()"
+        >
+          MEAT UR DOOM
+        </button>
       <img
         id="right-candle"
-        src="../../public/litCandle.gif"
+        src="../../public/doomskull.png"
         :class="{ isLit: rightLit }"
         @click="swapRight()"
       />
@@ -116,6 +124,9 @@ export default {
     swapRight() {
       this.rightLit = !this.rightLit;
     },
+    doomTime() {
+      this.$router.push({name: "doom"})
+    }
   },
   data() {
     return {
@@ -149,6 +160,7 @@ export default {
 #candle-box {
   display: flex;
   justify-content: space-between;
+  margin-top: 8px;
 }
 h1,
 p {
@@ -183,5 +195,6 @@ p {
   left: 1px;
   border-color: white;
   color: white;
+  
 }
 </style>
