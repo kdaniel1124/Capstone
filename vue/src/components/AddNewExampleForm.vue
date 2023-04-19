@@ -2,6 +2,7 @@
   <form>
     <div class="form-group">
       <label for="languageSelect">Programming Language</label>
+      <!-- Programming Language Selector Logic -->
       <select
         id="languageSelect"
         class="form-select"
@@ -19,11 +20,13 @@
         >
           {{ language.languageName }}
         </option>
+        <!-- Old Search Method -->
         <!--<option value="C#">C#</option>
         <option value="Java">Java</option>
         <option value="JavaScript">JavaScript</option>
         <option value="SQL">SQL</option>-->
       </select>
+      <!-- Post Title Logic -->
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label"
           >Post Title</label
@@ -36,6 +39,7 @@
           v-model="example.title"
         />
       </div>
+      <!--  --> 
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label"
           >Code Body</label
@@ -48,6 +52,7 @@
           v-model="example.code"
         ></textarea>
       </div>
+      <!--   Author will always be set to the user henceforth 4.19.23
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Author</label>
         <input
@@ -56,8 +61,13 @@
           id="exampleFormControlInput2"
           placeholder="(Optional)"
           v-model="example.attributionAuthor"
+          
         />
-      </div>
+        
+      </div> -->
+
+      <!-- URL Input, will provide URL under post for reference --> 
+
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">URL</label>
         <input
@@ -68,15 +78,19 @@
           v-model="example.attributionUrl"
         />
       </div>
+
+      <!-- Public/Private Note  --> 
+
       <div>
         <label for="radio">
-          <input type="radio" v-model.number="example.approved" value= 2 />
-          Set private</label>
-        
-        <label for="radio"> 
-          <input type="radio" v-model.number="example.approved" value= 0 />
-         Set public </label>
-       
+          <input type="radio" v-model.number="example.approved" value="2" />
+          Set private</label
+        >
+
+        <label for="radio">
+          <input type="radio" v-model.number="example.approved" value="0" />
+          Set public
+        </label>
       </div>
 
       <input
@@ -103,7 +117,7 @@ export default {
         codeLanguage: "",
         title: "",
         code: "",
-        attributionAuthor: "",
+        attributionAuthor: this.$store.state.user.username,
         attributionUrl: "",
         approved: 0,
       },

@@ -68,6 +68,12 @@
     </nav>
 
     <router-view />
+
+    <router-link
+          class="nav-item"
+          v-bind:to="{ name: 'doom' }"
+          >&nbsp; | &nbsp;Doom</router-link
+        >
   </div>
 </template>
 

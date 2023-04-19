@@ -99,7 +99,7 @@ export default {
 }
 html,body  {
   background-image: url("../../public/background.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-attachment: fixed;
 }
  .form-register{

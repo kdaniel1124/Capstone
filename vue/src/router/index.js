@@ -9,6 +9,7 @@ import NewExample from "../views/AddExample.vue";
 import UpdateExample from "../views/UpdateExample.vue";
 import AdminPanel from "../views/AdminPanel.vue"
 import UserPage from "../views/UserPage.vue"
+import DoomTime from "../views/DoomTime.vue"
 
 Vue.use(Router);
 
@@ -92,6 +93,14 @@ const router = new Router({
     meta: {
       requiresAuth: true,
     },
+  },
+    {
+      path: "/doom",
+      name: "doom",
+      component: DoomTime,
+      meta: {
+        requiresAuth: false,
+      },
   },
   ],
 });

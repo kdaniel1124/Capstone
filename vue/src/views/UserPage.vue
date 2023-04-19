@@ -29,7 +29,7 @@ export default {
   computed: {
     privateExamples() {
       let examplesInitial = this.$store.state.examples;
-      examplesInitial = examplesInitial.filter((x) => x.approved == 2);
+      examplesInitial = examplesInitial.filter((x) => x.approved == 2 && x.attributionAuthor == this.$store.state.user.username);
       console.log(examplesInitial);
       return examplesInitial;
     },
