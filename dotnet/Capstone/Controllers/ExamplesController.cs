@@ -28,7 +28,6 @@ namespace Capstone.Controllers
         [HttpPost()]
         public ActionResult AddExample(Example newExample)
         {
-
             examplesDAO.AddExample(newExample);
 
             return Ok();
@@ -36,7 +35,6 @@ namespace Capstone.Controllers
         [HttpPut()]
         public ActionResult UpdateExample(Example updatedExample)
         {
-
             examplesDAO.UpdateExample(updatedExample);
 
             return Ok();

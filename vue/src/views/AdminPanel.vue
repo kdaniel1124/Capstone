@@ -8,11 +8,11 @@
       :key="language.Name"
       >
         <button
-          :class="{ inactiveLanguage: !language.Active }"
+          :class="{ inactiveLanguage: !language.active }"
           class="stone-button"
-          @click="swapLanguageActivity(language.Name)"
+          @click="swapLanguageActivity(language)"
         >
-          {{language.Name}}
+          {{language.languageName}}
         </button>
       </li>
     </ul>
@@ -27,6 +27,7 @@
 
 <script>
 import ExamplesService from "@/services/ExamplesService.js";
+import LanguageService from "@/services/LanguageService.js";
 import ExampleCard from "@/components/ExampleCard.vue";
 export default {
   name: "adminPanel",
@@ -37,10 +38,22 @@ export default {
     ExamplesService.getFilteredExamples(this.$store.state.searchString).then(
       (response) => this.$store.commit("SET_EXAMPLES_LIST", response.data)
     );
+    LanguageService.getAllLanguages().then(
+      (response) => this.$store.commit("SET_LANGUAGES_LIST", response.data)
+    );
+
   },
   methods: {
-    swapLanguageActivity(name) {
-      this.$store.commit("SWAP_LANGUAGE_ACTIVITY", name);
+    swapLanguageActivity(language) {
+      language.active = !language.active
+      LanguageService.updateLanguage(language)
+      .catch((err) => console.error("Could not update example", err));
+      if(language.active){
+        alert(language.languageName + ' has been reactivated')
+      }
+      if(!language.active){
+        alert(language.languageName + ' has been deactivated')
+      }
     }
   },
   computed: {
