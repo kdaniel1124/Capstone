@@ -153,11 +153,13 @@ export default {
   margin-left: 15px;
   font-family: 'DotGothic16', sans-serif;
   background-image: url("../../public/button.png");
-  background-position: center;
-  background-size: 100%;
+  background-position: 15px center, center center;
+  background-repeat: no-repeat;
+  background-size:90%;
   color:black;
   font-weight: bold;
-
+  width: 115px;
+  height: 32px; 
 }
 
 </style>

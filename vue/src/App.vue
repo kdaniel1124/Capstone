@@ -67,7 +67,6 @@
         />
       </form>
     </nav>
-
     <router-view />
   </div>
   
@@ -149,13 +148,6 @@ img {
 }
 
 .stone-button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 50px;
-  border-radius: 999px;
   background-image: url("../public/stone2.jpg");
   background-position: center;
   background-size: 100%;
