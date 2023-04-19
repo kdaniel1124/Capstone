@@ -44,8 +44,8 @@ CREATE TABLE examples (
 )
 -- Populate default data for testing: user and admin with password of 'password'
 -- These values should not be kept when going to Production
-INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','Jg45HuwT7PZkfuKTz6IB90CtWY4=','LHxP4Xh7bN0=','user');
-INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin');
+INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','sAYbpBw8Ur8gaPuN1ixorq4loZM=','f9AqmhzUSdk=','user');
+INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','sAYbpBw8Ur8gaPuN1ixorq4loZM=', 'f9AqmhzUSdk=','admin');
 
 INSERT INTO supported_languages (language_name, highlight_js, active)
 VALUES ('C#', 'cs', 1)
