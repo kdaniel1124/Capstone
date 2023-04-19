@@ -19,6 +19,6 @@ export default {
 h2 {
     display: flex;
     justify-content: center;
-    font-family: 'Metal Mania', cursive;
+    font-family: 'DotGothic16', sans-serif;
 }
 </style>

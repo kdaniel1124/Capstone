@@ -11,8 +11,10 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "core-js": "^3.6.5",
+    "endent": "^2.1.0",
     "highlight.js": "^11.7.0",
     "vue": "^2.6.11",
+    "vue-mermaid-string": "^4.0.66",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
