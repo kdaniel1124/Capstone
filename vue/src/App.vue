@@ -2,6 +2,7 @@
      Note that you have classes from bootstrap available to you.
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
+
   <div id="app" class="container">
     <!-- If you start to get random styling you don't like, remove container from this div -->
     <nav id="nav">
@@ -68,6 +69,7 @@
     </nav>
     <router-view />
   </div>
+  
 </template>
 
 <script>
@@ -114,12 +116,11 @@ body {
 
 .nav-item {
   color: $light;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   text-shadow: 4px 4px 4px black;
   text-decoration: none;
   background-color: transparent;
   border: none;
- 
 }
 a:hover {
   color: $highlight;
@@ -133,7 +134,7 @@ img {
   background-position: center;
   background-size: 100%;
   margin-left: 8px;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   font-weight: bold;
 }
 
@@ -145,13 +146,62 @@ img {
   justify-content: space-between;
   position: static;
 }
+
 .stone-button {
   background-image: url("../public/stone2.jpg");
   background-position: center;
   background-size: 100%;
   margin-left: 8px;
- font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   color: #e54b4b;
   font-size: 30px;
+
+  &:hover {
+    // box-shadow: 0 0 20px 10px rgba(230, 30, 10, 0.6);
+    animation: burn 1000ms ease-out forwards;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 40px;
+      width: 100px;
+      height: 40px;
+      border-radius: 100%;
+      animation: flare 1000ms ease-out forwards;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 40px;
+      width: 100px;
+      height: 40px;
+      border-radius: 100%;
+      animation: flare 1000ms ease-out forwards;
+    }
+  }
+}
+
+@keyframes flare {
+  100% {
+    transform: translateY(-20px) scale(1.5);
+    filter: blur(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes burn {
+  0% {
+    color: rgba(255, 130, 110, 1);
+
+    box-shadow: 0 0 5px 0 rgba(200, 0, 10, 1), 0 0 5px 0 rgba(230, 30, 10, 0.8),
+      0 0 5px 0 rgba(230, 230, 10, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 -35px 40px 30px rgba(255, 130, 10, 0),
+      0 -30px 30px 10px rgba(230, 30, 10, 0),
+      0 -20px 10px 0 rgba(255, 255, 10, 0);
+  }
 }
 </style>
