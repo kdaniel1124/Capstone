@@ -1,5 +1,15 @@
 <template>
   <form>
+     <div id="radio">
+        <label for="radio">
+          <input type="radio" id="radios" v-model.number="example.approved" value= 2 />
+          Set private</label>
+        
+        <label for="radio"> 
+          <input type="radio" id="radios" v-model.number="example.approved" value= 0 />
+         Set public </label>
+       
+      </div>
     <div class="form-group">
       <label for="languageSelect">Programming Language</label>
       <select
@@ -30,9 +40,10 @@
         >
         <input
           type="text"
+          maxlength="50"
           class="form-control"
           id="exampleFormControlInput1"
-          placeholder="Example Title"
+          placeholder="Example Title (Maximum character limit 50)"
           v-model="example.title"
         />
       </div>
@@ -68,16 +79,7 @@
           v-model="example.attributionUrl"
         />
       </div>
-      <div>
-        <label for="radio">
-          <input type="radio" v-model.number="example.approved" value= 2 />
-          Set private</label>
-        
-        <label for="radio"> 
-          <input type="radio" v-model.number="example.approved" value= 0 />
-         Set public </label>
-       
-      </div>
+     
 
       <input
         id="submitButton"
@@ -146,4 +148,18 @@ export default {
   height: 40px;
   margin: auto;
 }
+
+#radio > label {
+  margin-left: 15px;
+  font-family: 'DotGothic16', sans-serif;
+  background-image: url("../../public/button.png");
+  background-position: 15px center, center center;
+  background-repeat: no-repeat;
+  background-size:90%;
+  color:black;
+  font-weight: bold;
+  width: 115px;
+  height: 32px; 
+}
+
 </style>

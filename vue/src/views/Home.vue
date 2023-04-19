@@ -1,7 +1,10 @@
 <template>
   <div class="home">
-    <h1>.NetCronomicon</h1>
-    <p>A Tome revealing all information in the coding world.</p>
+    <div class='wrapper'>
+    <h1 class="neon-text" data-text=".netCronomicon">.NetCronomicon</h1>
+    
+    <p class="neon-text" data-text="A Tome revealing all information in the coding world.">A Tome revealing all information in the coding world.</p>
+    </div>
     <p>Filter by language</p>
     <ul id="languages" class="nav justify-content-center">
       <li class="nav-item">
@@ -131,7 +134,7 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
 .isLit {
   width: 100px;
   height: 90px;
@@ -151,12 +154,22 @@ h1,
 p {
   display: flex;
   justify-content: center;
-  font-family: "Metal Mania", cursive;
-  text-shadow: 2px 2px 2px black;
+  font-family: 'DotGothic16', sans-serif;
+  text-shadow: 4px 4px 4px black;
 }
-h1 {
-  font-size: 50px;
+h3 {
+  font-size: 20px;
 }
+p.neon-text {
+  font-size: 100% ;
+  &::before {
+       position: absolute;
+    bottom: 4px;
+    right: 4px;
+    font-size: 100%;
+  }
+}
+
 p {
   font-size: 35px;
 }

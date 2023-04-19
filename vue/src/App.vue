@@ -114,11 +114,12 @@ body {
 
 .nav-item {
   color: $light;
-  font-family: "Metal Mania", cursive;
-  text-shadow: 2px 2px 2px black;
+  font-family: 'DotGothic16', sans-serif;
+  text-shadow: 4px 4px 4px black;
   text-decoration: none;
   background-color: transparent;
   border: none;
+ 
 }
 a:hover {
   color: $highlight;
@@ -132,7 +133,8 @@ img {
   background-position: center;
   background-size: 100%;
   margin-left: 8px;
-  font-family: "Metal Mania";
+  font-family: 'DotGothic16', sans-serif;
+  font-weight: bold;
 }
 
 .scrollButton:disabled {
@@ -148,7 +150,7 @@ img {
   background-position: center;
   background-size: 100%;
   margin-left: 8px;
-  font-family: "Metal Mania";
+ font-family: 'DotGothic16', sans-serif;
   color: #e54b4b;
   font-size: 30px;
 }

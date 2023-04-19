@@ -151,6 +151,8 @@ export default {
   margin-top: 5%;
   background-image: url("../../public/stone2.jpg");
   margin-bottom: 5%;
+  
+  
 }
 
 .card-header {
@@ -160,16 +162,22 @@ export default {
   background-color: $accentLight;
   background-image: url("../../public/stone2.jpg");
   text-shadow: 2px 2px 2px black;
+  font-family: 'DotGothic16', sans-serif;
+  
 }
-.card-title {
-  color: $dark;
+.card-header > h3 {
+  font-size: 35px;
 }
+
 .card-body {
   background-color: rgb(105, 105, 105);
   color: $dark;
   border: 4px solid black;
+  font-size: 20px;
+  
 }
 #editButton {
   background-size: cover;
 }
+
 </style>
