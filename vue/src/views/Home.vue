@@ -1,11 +1,16 @@
 <template>
   <div class="home">
-    <div class='wrapper'>
-    <h1 class="neon-text" data-text=".netCronomicon">.NetCronomicon</h1>
-    
-    <p class="neon-text" data-text="A Tome revealing all information in the coding world.">A Tome revealing all information in the coding world.</p>
+    <div class="wrapper">
+      <h1 class="neon-text" data-text=".netCronomicon">.NetCronomicon</h1>
+
+      <p
+        class="neon-text"
+        data-text="A Tome revealing all information in the coding world."
+      >
+        A Tome revealing all information in the coding world.
+      </p>
     </div>
-    
+
     <p>Filter by language</p>
     <ul id="languages" class="nav justify-content-center">
       <li class="nav-item">
@@ -47,7 +52,7 @@
         </button>
       </li>
     </ul>
-    
+
     <example-card
       v-for="example in languageFilteredExamples"
       :key="example.exampleId"
@@ -61,13 +66,9 @@
         :class="{ isLit: leftLit }"
         @click="swapLeft()"
       />
-      <button
-          v-if="isDoom"
-          class="stone-button"
-          @click="doomTime()"
-        >
-          MEAT UR DOOM
-        </button>
+      <button v-if="isDoom" class="stone-button" @click="doomTime()">
+        MEAT UR DOOM
+      </button>
       <img
         id="right-candle"
         src="../../public/doomskull.png"
@@ -125,8 +126,8 @@ export default {
       this.rightLit = !this.rightLit;
     },
     doomTime() {
-      this.$router.push({name: "doom"})
-    }
+      this.$router.push({ name: "doom" });
+    },
   },
   data() {
     return {
@@ -166,16 +167,16 @@ h1,
 p {
   display: flex;
   justify-content: center;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   text-shadow: 4px 4px 4px black;
 }
 h3 {
   font-size: 20px;
 }
 p.neon-text {
-  font-size: 100% ;
+  font-size: 100%;
   &::before {
-       position: absolute;
+    position: absolute;
     bottom: 4px;
     right: 4px;
     font-size: 100%;
@@ -195,6 +196,5 @@ p {
   left: 1px;
   border-color: white;
   color: white;
-  
 }
 </style>
