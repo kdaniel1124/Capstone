@@ -1,7 +1,7 @@
 <template>
   <section>
     <iframe 
-        src="http://browser-doom.io/?page=game&game=doom&profile=Doom%20(Shareware)" 
+        src="https://play.webrcade.com/" 
         title="Doom" 
         />
   </section>
