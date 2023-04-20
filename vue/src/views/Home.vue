@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <div class='wrapper'>
-    <h1 class="neon-text" data-text=".netCronomicon">.NetCronomicon</h1>
+    <h1 class="neon-text" data-text=".netCronomicon" id="title">.NetCronomicon</h1>
     
-    <p class="neon-text" data-text="A Tome revealing all information in the coding world.">A Tome revealing all information in the coding world.</p>
+    <p class="neon-text" data-text="A Tome revealing all information in the coding world." id="subtitle">A Tome revealing all information in the coding world.</p>
     </div>
     
-    <p>Filter by language</p>
+    <p id="filter">Filter by language</p>
     <ul id="languages" class="nav justify-content-center">
       <li class="nav-item">
         <button
@@ -66,7 +66,7 @@
           class="stone-button"
           @click="doomTime()"
         >
-          MEAT UR DOOM
+          Meet your DOOM
         </button>
       <img
         id="right-candle"
@@ -181,8 +181,7 @@ p.neon-text {
     font-size: 100%;
   }
 }
-
-p {
+#filter {
   font-size: 35px;
 }
 #languages > li > a {
@@ -195,6 +194,10 @@ p {
   left: 1px;
   border-color: white;
   color: white;
+}
+#title, #subtitle {
+  display: flex;
+  justify-content: center;
   
 }
 </style>

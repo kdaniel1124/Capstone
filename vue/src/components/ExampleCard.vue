@@ -46,10 +46,9 @@
     <div class="card-body">
       <pre><code v-bind:class="addClassLogic">{{example.code}}</code></pre>
       <a v-if="isValidUrl" class="card-attribution" v-bind:href="testString">{{
-        example.attributionUrl
+        example.attributionAuthor
       }}</a>
-      <p v-if="!isValidUrl">- {{ example.attributionUrl }}</p>
-      <p v-if="example.attributionAuthor">{{ example.attributionAuthor }}</p>
+      <p v-if="!isValidUrl" class="card-attribution">{{ example.attributionAuthor }}</p>
     </div>
   </div>
 </template>
@@ -179,5 +178,13 @@ export default {
 #editButton {
   background-size: cover;
 }
-
+.card-attribution {
+display: flex;
+justify-content: center;
+color:$highlight;
+font-family: 'DotGothic16', sans-serif;
+font-size: 25px;
+margin-right: 100px;
+text-shadow: 2px 2px 2px black;
+}
 </style>

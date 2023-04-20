@@ -25,6 +25,7 @@
           type="text"
           class="form-control"
           id="exampleFormControlInput1"
+          maxlength="50"
           placeholder="Example Title"
           v-model="example.title"
         />

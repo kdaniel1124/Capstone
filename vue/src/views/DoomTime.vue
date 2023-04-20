@@ -13,10 +13,12 @@ export default {};
 
 <style>
 iframe {
-    display: flex;
     height: 80vh;
     width: 67.5vw;
-    justify-content: center;
     border: none;
+}
+section {
+  display: flex;
+  justify-content: center;
 }
 </style>
