@@ -62,6 +62,7 @@
         <input
           class="btn btn-outline my-2 my-sm-0, scrollButton"
           type="submit"
+          value="Search"
           @click.prevent="setSearchString()"
         />
       </form>

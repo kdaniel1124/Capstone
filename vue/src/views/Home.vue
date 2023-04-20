@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+<<<<<<< HEAD
     <div class="wrapper">
       <h1 class="neon-text" data-text=".netCronomicon">.NetCronomicon</h1>
 
@@ -12,6 +13,15 @@
     </div>
 
     <p>Filter by language</p>
+=======
+    <div class='wrapper'>
+    <h1 class="neon-text" data-text=".netCronomicon" id="title">.NetCronomicon</h1>
+    
+    <p class="neon-text" data-text="A Tome revealing all information in the coding world." id="subtitle">A Tome revealing all information in the coding world.</p>
+    </div>
+    
+    <p id="filter">Filter by language</p>
+>>>>>>> ce280d3483f41ac01ed3ef40218c70d15ec59dfa
     <ul id="languages" class="nav justify-content-center">
       <li class="nav-item">
         <button
@@ -66,9 +76,13 @@
         :class="{ isLit: leftLit }"
         @click="swapLeft()"
       />
-      <button v-if="isDoom" class="stone-button" @click="doomTime()">
-        MEAT UR DOOM
-      </button>
+      <button
+          v-if="isDoom"
+          class="stone-button"
+          @click="doomTime()"
+        >
+          Meet your DOOM
+        </button>
       <img
         id="right-candle"
         src="../../public/doomskull.png"
@@ -182,8 +196,7 @@ p.neon-text {
     font-size: 100%;
   }
 }
-
-p {
+#filter {
   font-size: 35px;
 }
 #languages > li > a {
@@ -196,5 +209,10 @@ p {
   left: 1px;
   border-color: white;
   color: white;
+}
+#title, #subtitle {
+  display: flex;
+  justify-content: center;
+  
 }
 </style>
