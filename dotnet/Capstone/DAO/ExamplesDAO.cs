@@ -74,7 +74,7 @@ namespace Capstone.DAO
             {
                 conn.Open();
 
-                const string sql = "SELECT example_id, title, code_language, code, attribution_author, attribution_url FROM examples";
+                const string sql = "SELECT example_id, title, code_language, code, attribution_author, attribution_url, approved FROM examples";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
